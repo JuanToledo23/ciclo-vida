@@ -1,0 +1,22 @@
+@import "assets/styles/customTheme";
+@import "assets/styles/variables";
+@import "assets/styles/utilities";
+@import "assets/styles/titles";
+@import "assets/styles/containers";
+@import "assets/styles/forms";
+@import "assets/styles/checkbox";
+@import "assets/styles/buttons";
+@import "assets/styles/grid";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { 
+    font-family: $font-regular;
+    font-weight: normal;
+    font-style: normal;
+    color: #333333;
+    font-size: 14px;
+}

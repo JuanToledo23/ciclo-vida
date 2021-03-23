@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.97" height="20.97" viewBox="0 0 20.97 20.97">
+    <defs>
+        <style>.ico-inventario-1,.ico-inventario-2{fill:#fc0;}.b{stroke:#fc0;stroke-width:1.5px;}</style>
+    </defs>
+    <path class="ico-inventario-1" d="M20.873,2H4.1A2.174,2.174,0,0,0,2,4.1V7.253A2.118,2.118,0,0,0,3.048,9.025V20.873a2.253,2.253,0,0,0,2.1,2.1H19.824a2.253,2.253,0,0,0,2.1-2.1V9.025A2.118,2.118,0,0,0,22.97,7.253V4.1A2.174,2.174,0,0,0,20.873,2ZM19.824,20.873H5.145V9.339H19.824Zm1.048-13.63H4.1V4.1H20.873Z" transform="translate(-2 -2)"/>
+    <rect class="ico-inventario-2" width="6.238" height="1.871" transform="translate(7.366 10.485)"/>
+</svg>

@@ -1,0 +1,39 @@
+<div class="contenedor-filtros u-flex-between u-pad-1 u-border-bottom">
+    <div class="u-fz-17 u-txt-demibold">Total de artículos: <strong>250</strong></div>
+    <div>
+        <mat-select class="u-txt-demibold" style="width: 133px;">
+            <mat-option value="opt1">Opción 1</mat-option>
+            <mat-option value="opt2">Opción 2</mat-option>
+            <mat-option value="opt3">Opción 3</mat-option>
+        </mat-select>
+    </div>
+</div>
+<div class="contenedor-titulos u-flex-between u-border-bottom u-txt-demibold" style="padding: 2px 0px">
+    <div style="padding-left: 90px;">Producto</div>
+    <div style="padding-right: 42px;">Piezas</div>
+</div>
+<div class="u-scroll-y">
+    <div class="u-flex-between u-pad-1 u-border-bottom" *ngFor="let producto of inventario" [routerLink]="['/detalle', producto.id]" routerLinkActive="router-link-active" >
+        <div class="u-flex">
+            <div class="u-circulo">
+                <img [src]="producto.img" class="u-img-fluid">
+            </div>
+            <div class="u-flex-column" style="margin-left: 25.72px; width: 180px;">
+                <div class="u-fz-17 u-txt-medium">{{producto.nombre}}</div>
+                <div class="u-fz-15">SKU: {{producto.sku}}</div>
+                <div class="u-fz-15 u-txt-demibold">{{producto.cantidad}}</div>
+                <strong class="u-txt-15" [ngClass]="{'u-discontinuo': producto.estado === 'Discontinuo',
+                'u-noResurtible': producto.estado === 'No resurtible', 'u-linea': producto.estado === 'Línea',
+                'u-nuevo': producto.estado === 'Nuevo'}">
+                    {{producto.estado}}
+                </strong>
+            </div>
+        </div>
+        <div class="u-flex">
+            <div class="u-txt-medium u-fz-17" style="margin-bottom: 77px;">{{producto.piezas}}</div>
+            <div>
+                <mat-icon svgIcon="ico-flecha" class="u-icon-sm" style="margin-left: 22px;"></mat-icon>
+            </div>
+        </div>
+    </div>
+</div>

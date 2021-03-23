@@ -1,0 +1,21 @@
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    padding-left: 22px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url(./assets/img/checkbox/check_unchecked.svg);
+    background-position: 0px 7px;
+    padding: 6px 30px 5px 22px;
+}
+input[type="checkbox"]:checked + label {
+    background-image: url(./assets/img/checkbox/check_checked.svg);
+}
+
+input[type="checkbox"].alone + label {
+    background-position: 0px 2px;
+    padding: 0px 13px 0px 0px;
+}
