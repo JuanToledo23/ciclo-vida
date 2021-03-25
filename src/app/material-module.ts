@@ -49,5 +49,9 @@ export class MaterialModule {
       "ico-menu",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/menu.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "ico-regresar",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/regresar.svg")
+    );
   }
 }

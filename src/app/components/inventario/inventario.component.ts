@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderFooterService } from 'src/app/shared/services/headerFooterService.service';
 import { InventarioService } from 'src/app/shared/services/inventarioService.service';
 
 @Component({
@@ -9,8 +10,9 @@ export class InventarioComponent implements OnInit {
 
   inventario: any;
 
-  constructor(public _InventarioService: InventarioService) {
+  constructor(public _InventarioService: InventarioService, public _HeaderFooterService: HeaderFooterService) {
     this.inventario = this._InventarioService.getInventario();
+    this._HeaderFooterService.construirHeader('ico-inventario-activo', 'Inventario', false, true, 'Hogar');
   }
 
   ngOnInit(): void {
