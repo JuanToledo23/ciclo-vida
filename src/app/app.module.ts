@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './material-module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,8 @@ import { InventarioDetalleComponent } from './components/inventario-detalle/inve
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { AccionesTiendaComponent } from './components/acciones-tienda/acciones-tienda.component';
+import { FormularioDialog } from './shared/dialogs/formulario/formulario.dialog';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     InventarioComponent,
     HeaderComponent,
     FooterComponent,
-    InventarioDetalleComponent
+    InventarioDetalleComponent,
+    AccionesTiendaComponent,
+    FormularioDialog
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    CommonModule,
     MaterialModule,
     IvyCarouselModule,
     NgxEchartsModule.forRoot({
@@ -37,6 +43,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    FormularioDialog
+  ]
 })
 export class AppModule { }

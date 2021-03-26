@@ -388,6 +388,10 @@
     cursor: pointer;
 }
 
+.u-txt-through{
+    text-decoration: line-through;
+}
+
 .u-cursor-p {
     cursor: pointer;
 }
@@ -474,6 +478,10 @@ strong {
     padding: 15px 16px;
 }
 
+.u-pad-2 {
+    padding: 18px 16px;
+}
+
 .u-border-bottom {
     border-bottom: solid 1px #D3D3D3;
 }
@@ -522,6 +530,12 @@ strong {
 
 .u-bg-amarillo {
     background-color: #FFCC00;
+}
+.u-bg-rojo {
+    background-color: #CC3333;
+}
+.u-bg-verde {
+    background-color: $color-verde;
 }
 
 .u-txt-blanco {
@@ -581,4 +595,11 @@ strong {
     left: 11px;
     border: solid 1px #15B5F7;
     background-color: #4078ca !important;
+
 }
+
+.u-input-read {
+    cursor: none; 
+    pointer-events: none;
+}
+

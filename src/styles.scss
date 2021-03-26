@@ -22,3 +22,11 @@ body {
     color: #333333;
     font-size: 14px;
 }
+
+.mat-dialog-container {
+    padding: unset !important;
+}
+
+.cdk-overlay-pane {
+    max-width: unset !important;
+}

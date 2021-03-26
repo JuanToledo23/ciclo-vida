@@ -65,7 +65,7 @@ chartOption: EChartsOption = {
               }
         },
         nameTextStyle: {
-          padding: [0, 0, 15, 0]
+          padding: [5, 0, 15, 0]
         }
     },
     {
@@ -74,7 +74,7 @@ chartOption: EChartsOption = {
         name: 'Venta',
         axisLabel: { formatter: '{value}K' },
         nameTextStyle: {
-          padding: [0, 0, 15, 60]
+          padding: [5, 0, 15, 60]
         }
     }
   ],

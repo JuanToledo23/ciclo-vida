@@ -4,7 +4,7 @@
             <mat-icon svgIcon="ico-puntos" class="u-icon-md"></mat-icon>
         </button>
         <mat-menu #menu="matMenu" xPosition="before">
-            <button mat-menu-item class="menu-btn">Solicitar acciones en tienda</button>
+            <button mat-menu-item class="menu-btn" [routerLink]="['/acciones-tienda']" routerLinkActive="router-link-active" >Solicitar acciones en tienda</button>
             <button mat-menu-item class="menu-btn">Solicitar acciones en CeDis</button>
         </mat-menu>
     </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;">
             <div class="u-fz-13 u-txt-medium">Precio de venta</div>
-            <div class="u-fz-12 u-txt-medium u-txt-gris">$8,149</div>
+            <div class="u-fz-12 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
             <div class="u-fz-17 strong">$4,074</div>
         </div>
         <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 0px 0px 13px;">
@@ -86,22 +86,22 @@
                 </div>
                 <div class="contenedor-acordion">
                     <div class="u-flex-between u-fz-13 u-txt-medium u-border-bottom">
-                        <div class="u-txt-left">CeDis</div>
-                        <div class="u-txt-center">48</div>
-                        <div class="u-txt-center">0</div>
-                        <div class="u-txt-right">$181,104</div>
+                        <div class="u-txt-left inventario">CeDis</div>
+                        <div class="u-txt-center sinDano">48</div>
+                        <div class="u-txt-center conDano">0</div>
+                        <div class="u-txt-right costo">$181,104</div>
                     </div>
                     <div class="u-flex-between u-fz-13 u-txt-medium u-border-bottom">
-                        <div class="u-txt-left">Tienda</div>
-                        <div class="u-txt-center">979</div>
-                        <div class="u-txt-center">0</div>
-                        <div class="u-txt-right">$3,693,767</div>
+                        <div class="u-txt-left inventario">Tienda</div>
+                        <div class="u-txt-center sinDano">979</div>
+                        <div class="u-txt-center conDano">0</div>
+                        <div class="u-txt-right costo">$3,693,767</div>
                     </div>
                     <div class="u-flex-between u-fz-13 u-txt-medium u-bg-gris2 u-border-r4-bottom">
-                        <div lass="u-txt-left">Total</div>
-                        <div class="u-txt-center">1,027</div>
-                        <div class="u-txt-center">0</div>
-                        <div class="u-txt-right">$3,874,871</div>
+                        <div class="u-txt-left inventario">Total</div>
+                        <div class="u-txt-center sinDano">1,027</div>
+                        <div class="u-txt-center conDano">0</div>
+                        <div class="u-txt-right costo">$3,874,871</div>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -118,41 +118,66 @@
     </div>
     <div echarts [options]="chartOption" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
 
-    <div class="row">
-        <div class="col-6 u-flex-center">
-            <div class="cuadro u-grafica-azul"></div>
+    <div class="row" style="margin-top: 28.7px;">
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="cuadro u-grafica-azul"></div>
+            </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario en CD’s</div>
         </div>
-        <div class="col-6 u-flex-center">
-            <div class="cuadro u-grafica-gris"></div>
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="cuadro u-grafica-gris"></div>
+            </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Venta año anterior</div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 u-flex-center">
-            <div class="cuadro u-grafica-verde"></div>
+    <div class="row" style="margin-top: 7.35px;">
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="cuadro u-grafica-verde"></div>
+            </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario BOD</div>
         </div>
-        <div class="col-6 u-flex-center">
-            <div class="u-grafica-naranja u-position-r" style="width: 29px; height: 2px;">
-                <div class="u-position-a u-circulo u-grafica-naranja circulo-info" style="width: 6px; height: 6px;"></div>
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="u-grafica-naranja u-position-r" style="width: 29px; height: 2px;">
+                    <div class="u-position-a u-circulo u-grafica-naranja circulo-info" style="width: 6px; height: 6px;"></div>
+                </div>
             </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Ventas</div>
         </div>
     </div>
         
-    <div class="row">
-        <div class="col-6 u-flex-center">
-            <div class="cuadro u-grafica-amarillo"></div>
+    <div class="row" style="margin-top: 7.35px;">
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="cuadro u-grafica-amarillo"></div>
+            </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario BOD</div>
         </div>
-        <div class="col-6 u-flex-center">
-            <div class="u-grafica-azul2 u-position-r" style="width: 29px; height: 2px;">
-                <div class="u-position-a u-circulo u-grafica-azul2 circulo-info2" style="width: 6px; height: 6px;"></div>
+        <div class="col-6 u-flex u-align-center">
+            <div class="u-flex-center" style="width: 30px;">
+                <div class="u-grafica-azul2 u-position-r" style="width: 29px; height: 2px;">
+                    <div class="u-position-a u-circulo u-grafica-azul2 circulo-info2" style="width: 6px; height: 6px;"></div>
+                </div>
             </div>
             <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Ventas AA</div>
         </div>
+    </div>
+
+    <div class="u-flex-between u-bg-gris2" style="margin-top: 45.11px;">
+        <div class="u-flex-center u-fz-12 strong u-txt-blanco u-bg-rojo" style="width:111.37px; padding: 2px 0px;">Inv. en riesgo</div>
+        <div class="u-txt-link"><span class="u-fz-12 u-txt-medium">259</span><span class="u-fz-10 u-txt-medium">(tienda)</span></div>
+        <div class="u-fz-12 u-txt-medium">59%</div>
+        <div class="strong u-fz-12" style="margin-right: 16px;">$2,162,739</div>
+    </div>
+    <div class="u-flex-between u-bg-gris2" style="margin-top: 11.69px;">
+        <div class="u-flex-center u-fz-12 strong u-txt-blanco u-bg-verde" style="width:111.37px; padding: 2px 0px;">Inv. sin riesgo</div>
+        <div class="u-txt-link"><span class="u-fz-12 u-txt-medium">227</span><span class="u-fz-10 u-txt-medium">(tienda)</span></div>
+        <div class="u-fz-12 u-txt-medium">41%</div>
+        <div class="strong u-fz-12" style="margin-right: 16px;">$1,484,320</div>
     </div>
 
 </div>

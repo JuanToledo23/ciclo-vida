@@ -41,7 +41,23 @@
     border-radius: 4px;
 }
 
-.contenedor-acordion .u-flex-between > div {
+/* .contenedor-acordion .u-flex-between > div {
     width: 25%;
     padding: 7px 15px;
+} */
+
+.inventario {
+    width: 23%; padding: 7px 11px;
+}
+
+.sinDano {
+    width: 43%;
+}
+
+.conDano {
+    width: 10%;
+}
+
+.costo {
+    width: 29%; padding: 7px 11px;
 }

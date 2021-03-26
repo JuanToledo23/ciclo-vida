@@ -1,0 +1,37 @@
+<div class="u-pad-2 u-scroll-y">
+    <div class="u-fz-13 u-txt-demibold">Configura la acción, previsualizala y solicita su autorización para los 5,000 colchones <strong class="u-txt-amarillo">Set Restonic Queen Size Grey.</strong></div>
+    <div class="row" style="margin-top: 16.87px;">
+        <div class="col-12">
+            <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona una opción</div>
+            <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="accion" (selectionChange)="cambioAccion()">
+                <mat-option value="opt1">Generar descuento a producto</mat-option>
+                <mat-option value="opt2">Generar un bombo con descuento</mat-option>
+                <mat-option value="opt3">Generar un combo con regalo</mat-option>
+            </mat-select>
+        </div>
+        <ng-container *ngIf="opt1">
+            <div class="col-12" style="margin-top: 29px;">
+                <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿En qué canal lo quieres aplicar?</div>
+                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
+                    <mat-option value="opt1">Opción 1</mat-option>
+                    <mat-option value="opt2">Opción 2</mat-option>
+                    <mat-option value="opt3">Opción 3</mat-option>
+                </mat-select>
+            </div>
+            <div class="col-12" style="margin-top: 29px;">
+                <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Qué descuento deseas aplicar?</div>
+                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
+                    <mat-option value="opt1">Opción 1</mat-option>
+                    <mat-option value="opt2">Opción 2</mat-option>
+                    <mat-option value="opt3">Opción 3</mat-option>
+                </mat-select>
+            </div>
+            <div class="col-12" style="margin-top: 29px;">
+                <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿En qué territorio lo quieres aplicar?</div>
+                <div class="u-cursor-p" (click)="seleccionarTerritorio()">
+                    <input type="text" class="u-input-read">
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
