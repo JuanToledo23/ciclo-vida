@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.61" height="22.44" viewBox="0 0 5.61 22.44">
+    <defs>
+        <style>
+            .ico-puntos {
+                fill-rule: evenodd;
+                opacity: 0.54;
+            }
+        </style>
+    </defs>
+    <path class="ico-puntos"
+        d="M6.8,9.61A2.8,2.8,0,1,0,4,6.8a2.813,2.813,0,0,0,2.8,2.8Zm0,2.8a2.8,2.8,0,1,0,2.8,2.8,2.813,2.813,0,0,0-2.8-2.8Zm0,8.415a2.8,2.8,0,1,0,2.8,2.8,2.813,2.813,0,0,0-2.8-2.8Z"
+        transform="translate(-4 -4)" />
+</svg>

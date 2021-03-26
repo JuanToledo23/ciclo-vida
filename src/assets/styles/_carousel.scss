@@ -1,0 +1,19 @@
+.carousel-dots .carousel-dot {
+    border: 1px solid #969696 !important;
+    border-radius: 100px !important;
+    display: inline-block !important;
+    height: 5px !important;
+    margin: 4px !important;
+    width: 5px !important;
+    background-color: #969696 !important;
+}
+
+.carousel-dots .carousel-dot-active {
+    background-color: #fff !important;
+    height: 6px !important;
+    width: 6px !important;
+}
+
+carousel {
+    z-index: unset !important;
+}

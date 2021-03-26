@@ -5,6 +5,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -18,6 +20,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
+    MatExpansionModule,
+    MatMenuModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-MX'}
@@ -52,6 +56,18 @@ export class MaterialModule {
     this.matIconRegistry.addSvgIcon(
       "ico-regresar",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/regresar.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ico-puntos",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/puntos.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ico-promo",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/promo.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ico-editar",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/editar.svg")
     );
   }
 }

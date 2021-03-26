@@ -1,4 +1,158 @@
-<div echarts [options]="chartOption" style="width: 90%; margin: 0 auto;"></div>
-<div style="padding: 0px 10px;">
-    <!-- <div id="chartdiv" style="width: 100%; height: 500px"></div> -->
+<div class="u-pad-1 u-scroll-y">
+    <div class="u-flex-end">
+        <button mat-icon-button aria-label="Regresar" style="z-index: 2;" [matMenuTriggerFor]="menu">
+            <mat-icon svgIcon="ico-puntos" class="u-icon-md"></mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item class="menu-btn">Solicitar acciones en tienda</button>
+            <button mat-menu-item class="menu-btn">Solicitar acciones en CeDis</button>
+        </mat-menu>
+    </div>
+    <div class="u-position-r">
+        <carousel
+        [objectFit]="'cover'"
+        [cellWidth]="'100%'"
+        [arrowsOutside]="true"
+        [autoplay]="false"
+        [dots]="true"
+        [loop]="true"
+        style="margin-top: -25px;">
+            <div class="carousel-cell">
+                <img [src]="articuloMostrado.img">
+            </div>
+            <div class="carousel-cell">
+                <img [src]="articuloMostrado.img">
+            </div>
+            <div class="carousel-cell">
+                <img [src]="articuloMostrado.img">
+            </div>
+        </carousel>
+        <mat-icon svgIcon="ico-promo" class="u-position-a" style="width: 38.5px; height: 38.5px;left: 95px;top: 100px;"></mat-icon>
+        <label class="u-position-a u-txt-blanco strong" style="left: 99px;top: 111px;">{{articuloMostrado.descuento}}%</label>
+    </div>
+
+    <div class="u-flex-column" style="margin-top: 28px;">
+        <div class="u-fz-17 u-txt-demibold">{{articuloMostrado.nombre}}</div>
+        <div class="u-flex-between">
+            <div class="u-fz-15">SKU: {{articuloMostrado.sku}}</div>
+            <div class="u-fz-13">{{articuloMostrado.tiendas}} tiendas</div>
+        </div>
+        <strong class="u-txt-15" [ngClass]="{'u-discontinuo': articuloMostrado.estado === 'Discontinuo',
+            'u-noResurtible': articuloMostrado.estado === 'No resurtible', 'u-linea': articuloMostrado.estado === 'Línea',
+            'u-nuevo': articuloMostrado.estado === 'Nuevo'}">
+                {{articuloMostrado.estado}}
+        </strong>
+        <div class="u-fz-15">{{articuloMostrado.piezas}} pzas.</div>
+    </div>
+    <div class="u-flex-center-y" style="margin: 18px 0px;">
+        <div class="u-flex-center-y u-cursor-p">
+            <div class="u-txt-amarillo u-fz-13 strong">Descuento en proceso de autorización</div>
+            <mat-icon svgIcon="ico-editar" style="width: 15px; height: 15px; margin-left: 6px;"></mat-icon>
+        </div>
+    </div>
+    <div class="u-flex-between">
+        <div class="u-flex-column u-align-center" style="padding: 0px 13px 0px 0px;">
+            <div class="u-fz-13 u-txt-medium">Costo</div>
+            <div class="u-fz-12 u-txt-medium">&nbsp;</div>
+            <div class="u-fz-17 strong">$3,773</div>
+        </div>
+        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;">
+            <div class="u-fz-13 u-txt-medium">Precio de venta</div>
+            <div class="u-fz-12 u-txt-medium u-txt-gris">$8,149</div>
+            <div class="u-fz-17 strong">$4,074</div>
+        </div>
+        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 0px 0px 13px;">
+            <div class="u-fz-13 u-txt-medium">Efectividad</div>
+            <div class="u-fz-12 u-txt-medium u-txt-gris"><strong>80</strong> de 200 tiendas</div>
+            <div class="u-fz-17 strong">40%</div>
+        </div>
+    </div>
+    <div style="margin-top: 30px;">
+        <mat-accordion multi >
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <div class="u-flex-between u-w-100">
+                            <div>Días de inventario</div>
+                            <div>370</div>
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="u-flex-between u-fz-13 u-txt-medium" style="margin-top: 7px;padding: 0px 10px;">
+                    <div>Inventario</div>
+                    <div>Sin daño</div>
+                    <div>Con daño</div>
+                    <div>Costo</div>
+                </div>
+                <div class="contenedor-acordion">
+                    <div class="u-flex-between u-fz-13 u-txt-medium u-border-bottom">
+                        <div class="u-txt-left">CeDis</div>
+                        <div class="u-txt-center">48</div>
+                        <div class="u-txt-center">0</div>
+                        <div class="u-txt-right">$181,104</div>
+                    </div>
+                    <div class="u-flex-between u-fz-13 u-txt-medium u-border-bottom">
+                        <div class="u-txt-left">Tienda</div>
+                        <div class="u-txt-center">979</div>
+                        <div class="u-txt-center">0</div>
+                        <div class="u-txt-right">$3,693,767</div>
+                    </div>
+                    <div class="u-flex-between u-fz-13 u-txt-medium u-bg-gris2 u-border-r4-bottom">
+                        <div lass="u-txt-left">Total</div>
+                        <div class="u-txt-center">1,027</div>
+                        <div class="u-txt-center">0</div>
+                        <div class="u-txt-right">$3,874,871</div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="u-border-r4 u-bg-amarillo u-flex-between u-txt-blanco strong" style="height: 27px; padding: 0 24px;margin-top: 7px;">
+                <div>Venta diaria</div>
+                <div>2 pzs.</div>
+        </div>
+    </div>
+    <div class="u-fz-17 u-txt-demibold u-mt-2">Inventario vs. Venta (unidades)</div>
+    <div class="u-flex-center u-mt-1">
+        <button mat-flat-button color="primary" class="btn btn-activo" style="width: 72px;">Pieza</button>
+        <button mat-flat-button class="btn btn-gris" style="margin-left: 31px; width: 72px;">Monto</button>
+    </div>
+    <div echarts [options]="chartOption" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
+
+    <div class="row">
+        <div class="col-6 u-flex-center">
+            <div class="cuadro u-grafica-azul"></div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario en CD’s</div>
+        </div>
+        <div class="col-6 u-flex-center">
+            <div class="cuadro u-grafica-gris"></div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Venta año anterior</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 u-flex-center">
+            <div class="cuadro u-grafica-verde"></div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario BOD</div>
+        </div>
+        <div class="col-6 u-flex-center">
+            <div class="u-grafica-naranja u-position-r" style="width: 29px; height: 2px;">
+                <div class="u-position-a u-circulo u-grafica-naranja circulo-info" style="width: 6px; height: 6px;"></div>
+            </div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Ventas</div>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="col-6 u-flex-center">
+            <div class="cuadro u-grafica-amarillo"></div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Inventario BOD</div>
+        </div>
+        <div class="col-6 u-flex-center">
+            <div class="u-grafica-azul2 u-position-r" style="width: 29px; height: 2px;">
+                <div class="u-position-a u-circulo u-grafica-azul2 circulo-info2" style="width: 6px; height: 6px;"></div>
+            </div>
+            <div style="margin-left: 13px;" class="u-fz-12 u-txt-medium">Ventas AA</div>
+        </div>
+    </div>
+
 </div>

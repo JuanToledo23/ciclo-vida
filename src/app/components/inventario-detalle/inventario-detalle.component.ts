@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EChartsOption } from 'echarts';
 import { HeaderFooterService } from 'src/app/shared/services/headerFooterService.service';
+import { InventarioService } from 'src/app/shared/services/inventarioService.service';
 
 @Component({
   selector: 'app-inventario-detalle',
   templateUrl: './inventario-detalle.component.html'
 })
 export class InventarioDetalleComponent implements OnInit {
+
+  inventario: any = [];
+  articuloMostrado: any;
 
 xAxisData = [];
 data1 = [];
@@ -33,6 +38,7 @@ data21 = [];
 
 linea1 = [];
 linea2 = [];
+linea3 = [];
 
 link = [];
 
@@ -41,83 +47,41 @@ colorVerde: string = '#3FAE2B';
 colorAmarillo: string = '#FFCC00';
 
 
-emphasisStyle = {
-    itemStyle: {
-        shadowBlur: 10,
-        shadowColor: 'rgba(0,0,0,0.3)',
-        gapWidth: 5
-    }
-};
-
 chartOption: EChartsOption = {
-  /* legend: {
-    data: ['bar', 'bar2', 'bar3', 'bar4'],
-  }, */
   tooltip: {},
   xAxis: {
     data: this.xAxisData,
     name: '',
-    // axisLine: {onZero: false},
-    // splitLine: {show: false},
-    // splitArea: {show: false}
-    // axisTick: {
-    //   alignWithLabel: true
-    // }
   },
   yAxis: [
     {
       id:   'AvgAxis',
       type: 'value',
       name: 'Inventario',
-      // min: 0,
-      // max: 30,
-      // interval: 5,
       axisLabel: { 
         formatter: function (value, index) {
                   let aux = value/1000000;
                   return aux + 'M';
               }
+        },
+        nameTextStyle: {
+          padding: [0, 0, 15, 0]
         }
     },
-  {
-      id:   'MaxAxis',
-      type: 'value',
-      name: 'Venta',
-      min: 0,
-      max: 1000,
-      interval: 100,
-      axisLabel: { formatter: '{value} K' }
-  }
+    {
+        id:   'MaxAxis',
+        type: 'value',
+        name: 'Venta',
+        axisLabel: { formatter: '{value}K' },
+        nameTextStyle: {
+          padding: [0, 0, 15, 60]
+        }
+    }
   ],
-  // yAxis: [
-  //   {
-  //     axisLabel: {
-  //       formatter: function (value, index) {
-  //         let aux = value/1000000;
-  //         return aux + 'M';
-  //     },
-  //     fontSize: '12'
-  //     }
-  //   },
-  //   {
-  //     type: 'value',
-  //     name: "Wi-Fi\nUsers",
-  //     min: 0,
-  //     max: 500,
-  //     position: 'right',
-  //     offset:90,
-  //     splitLine: {
-  //         show: true
-  //     },
-  //   }
-  // ],
-  // grid: {
-  //   bottom: 100
-  // },
   grid: {
-    left: 30,
+    left: 25,
     top: 40,
-    right: 50,
+    right: 46,
     bottom: 40
   },
   dataZoom: [
@@ -141,168 +105,190 @@ chartOption: EChartsOption = {
       name: 'bar',
       type: 'bar',
       stack: 'uno',
-      emphasis: this.emphasisStyle,
       data: this.data1,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul,
+      
     },
     {
       name: 'bar2',
       type: 'bar',
       stack: 'uno',
-      emphasis: this.emphasisStyle,
       data: this.data2,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar3',
       type: 'bar',
       stack: 'uno',
-      emphasis: this.emphasisStyle,
       data: this.data3,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar4',
       type: 'bar',
       stack: 'dos',
-      emphasis: this.emphasisStyle,
       data: this.data4,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar5',
       type: 'bar',
       stack: 'dos',
-      emphasis: this.emphasisStyle,
       data: this.data5,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar6',
       type: 'bar',
       stack: 'dos',
-      emphasis: this.emphasisStyle,
       data: this.data6,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar7',
       type: 'bar',
       stack: 'tres',
-      emphasis: this.emphasisStyle,
       data: this.data7,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar8',
       type: 'bar',
       stack: 'tres',
-      emphasis: this.emphasisStyle,
       data: this.data8,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar9',
       type: 'bar',
       stack: 'tres',
-      emphasis: this.emphasisStyle,
       data: this.data9,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar10',
       type: 'bar',
       stack: 'cuatro',
-      emphasis: this.emphasisStyle,
       data: this.data10,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar11',
       type: 'bar',
       stack: 'cuatro',
-      emphasis: this.emphasisStyle,
       data: this.data11,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar12',
       type: 'bar',
       stack: 'cuatro',
-      emphasis: this.emphasisStyle,
       data: this.data12,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar13',
       type: 'bar',
       stack: 'cinco',
-      emphasis: this.emphasisStyle,
       data: this.data13,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar14',
       type: 'bar',
       stack: 'cinco',
-      emphasis: this.emphasisStyle,
       data: this.data14,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar15',
       type: 'bar',
       stack: 'cinco',
-      emphasis: this.emphasisStyle,
       data: this.data15,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar16',
       type: 'bar',
       stack: 'seis',
-      emphasis: this.emphasisStyle,
       data: this.data16,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar17',
       type: 'bar',
       stack: 'seis',
-      emphasis: this.emphasisStyle,
       data: this.data17,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar18',
       type: 'bar',
       stack: 'seis',
-      emphasis: this.emphasisStyle,
       data: this.data18,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
     {
       name: 'bar19',
       type: 'bar',
       stack: 'siete',
-      emphasis: this.emphasisStyle,
       data: this.data19,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAzul
     },
     {
       name: 'bar20',
       type: 'bar',
       stack: 'siete',
-      emphasis: this.emphasisStyle,
       data: this.data20,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorVerde
     },
     {
       name: 'bar21',
       type: 'bar',
       stack: 'siete',
-      emphasis: this.emphasisStyle,
       data: this.data21,
+      barGap: '50%',
+      barCategoryGap: '3%',
       color: this.colorAmarillo
     },
 
@@ -310,87 +296,99 @@ chartOption: EChartsOption = {
       type: 'line',
       data: this.linea1,
       yAxisIndex: 1,
-      color: '#FF9F17'
+      color: '#FF9F17',
+      showAllSymbol: 'auto',
+      symbol: 'circle',
+      symbolSize: 7,
+      lineStyle: {
+        width: 2
+      },
     },
     {
       type: 'line',
       data: this.linea2,
       yAxisIndex: 1,
-      color: '#15b5f7'
-    }
-/*     {
-      type: 'graph',
-      layout: 'none',
-      coordinateSystem: 'cartesian2d',
-      symbolSize: 5,
-      edgeSymbol: ['circle'],
-      edgeSymbolSize: [0, 0],
-      data: this.linea1,
-      links: this.link,
+      color: '#15b5f7',
+      showAllSymbol: 'auto',
+      symbol: 'circle',
+      symbolSize: 7,
       lineStyle: {
-              color: '#ffa015',
-              width:1,
-              opacity: 1
-
+        color: '#15b5f7',
+        width: 2
       },
-      label: {
-          formatter: function(){
-              return '';
-          }
+      itemStyle: {
+        color: "#4078ca",
+        borderColor: "#15b5f7",
+        borderWidth: 1,
       },
-      color: '#ffa015',
-    } */
-
+    },
+    {
+      data: this.linea3,
+      yAxisIndex: 1,
+      type: 'line',
+      areaStyle: {
+        color: '#dddee0'
+      },
+      lineStyle: {
+        opacity: 0
+      },
+      itemStyle: {
+        opacity: 0
+      }
+    } 
   ]
 }
 
 
 
-  constructor(public _HeaderFooterService: HeaderFooterService) {
+  constructor(public _HeaderFooterService: HeaderFooterService, private route: ActivatedRoute, public _InventarioService: InventarioService) {
+
+    this.inventario = this._InventarioService.getInventario();
+
+    const routeParams = this.route.snapshot.paramMap;
+    const idFromRoute = Number(routeParams.get('id'));
+    this.articuloMostrado = this.inventario.find((video: { id: number; }) => video.id === idFromRoute);
+
+    console.log(this.articuloMostrado);
+
+
     this._HeaderFooterService.construirHeader('', 'Inventario', true, false); 
-  for (var i = 0; i < 57; i++) {
-    this.data1.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data2.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data3.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data4.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data5.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data6.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data7.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data8.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data9.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data10.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data11.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data12.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data13.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data14.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data15.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data16.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data17.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data18.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data19.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data20.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.data21.push(Math.floor(Math.random() * 1000000) + 500000);
-    this.linea1.push(Math.floor(Math.random() * 1000));
-    this.linea2.push(Math.floor(Math.random() * 1000));
-  }
+    for (var i = 0; i < 57; i++) {
+      this.data1.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data2.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data3.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data4.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data5.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data6.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data7.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data8.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data9.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data10.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data11.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data12.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data13.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data14.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data15.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data16.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data17.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data18.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data19.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data20.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.data21.push(Math.floor(Math.random() * 1000000) + 500000);
+      this.linea1.push(Math.floor(Math.random() * 1000000));
+      this.linea2.push(Math.floor(Math.random() * 1000000));
+      this.linea3.push(Math.floor(0));
+    }
 
-  // for (let index = 0; index < 40; index++) {
-  //   const element = array[index];
-    
-  // }
-
-  for (let index = 7; index < 53; index++) {
+  for (let index = 7; index <= 52; index++) {
     this.xAxisData.push('Sem ' + index);
   }
-/* 
-  this.link = this.linea1.map(function (item, i) {
-    return {
-        source: i,
-        target: i + 1
-    };
-  }); */
 
-  
+  for (let index = 1; index <= 52; index++) {
+    this.xAxisData.push('Sem ' + index);
+    this.linea2.push(140000);
+    this.linea3.push(Math.floor(Math.random() * 1000000));
+  } 
   }
 
   ngOnInit(): void {

@@ -11,8 +11,10 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { InventarioDetalleComponent } from './components/inventario-detalle/inventario-detalle.component';
 
+
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import * as echarts from 'echarts';
     HttpClientModule,
     FormsModule,
     MaterialModule,
+    IvyCarouselModule,
     NgxEchartsModule.forRoot({
       echarts,
     }),

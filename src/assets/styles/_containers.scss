@@ -31,3 +31,17 @@
     position: sticky;
     z-index: 2;
 }
+
+.carousel-arrows {
+    display: none !important;
+}
+
+.contenedor-acordion {
+    border: solid 0.5px #999999;
+    border-radius: 4px;
+}
+
+.contenedor-acordion .u-flex-between > div {
+    width: 25%;
+    padding: 7px 15px;
+}

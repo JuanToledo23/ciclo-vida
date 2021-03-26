@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~9.1.13",
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
+    "angular-responsive-carousel": "^2.0.2",
     "echarts": "^5.0.2",
     "ngx-echarts": "^6.0.1",
     "rxjs": "~6.5.4",

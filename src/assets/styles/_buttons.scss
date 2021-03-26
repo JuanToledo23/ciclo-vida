@@ -1,0 +1,25 @@
+.menu-btn {
+    height: 30px !important;
+    line-height: 35px !important;
+    font-size: 12px !important;
+    font-family: $font-medium;
+}
+
+.mat-menu-content:not(:empty) {
+    padding-top: unset !important;
+    padding-bottom: unset !important;
+}
+
+.btn {
+    font-size: 13px !important;
+    font-family: $font-medium;
+}
+
+.btn-gris {
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+.btn-activo {
+    font-family: $font-bold !important;
+}
