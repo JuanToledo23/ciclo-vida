@@ -603,3 +603,17 @@ strong {
     pointer-events: none;
 }
 
+hr {
+    margin: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-end: unset;
+    overflow: hidden;
+    border-color: #D3D3D3;
+    unicode-bidi: unset;
+    margin-inline-start: unset;
+    border-style: solid;
+    display: block;
+    border-width: 1px;
+    border-bottom: unset;
+}

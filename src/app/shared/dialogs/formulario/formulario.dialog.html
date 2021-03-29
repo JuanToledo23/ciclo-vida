@@ -1,6 +1,24 @@
-<div style="max-width: 300px; padding: 21px 22px;" *ngIf="data.tipo === 0">
-    <strong class="dialog-titulo u-flex-center u-fz-18">{{data.titulo}}</strong>
-    <div class="u-flex-center u-mt-1">
+<div style="max-width: 341px; padding: 21px 0px;" *ngIf="data.tipo === 0">
+    <div style="padding: 0px 24px; margin-bottom: 21px;">
+        <div class="dialog-titulo u-flex-center u-txt-medium u-fz-18">{{data.titulo}}</div>
+    </div>
+    <hr>
+    <div class="row" style="padding: 0px 24px;">
+        <div class="col-6" *ngFor="let territorio of territorios">
+            <div class="u-flex u-fz-13" style="margin-top: 31.82px;">
+                <div class="territorios">
+                    <input type="checkbox" name="grupo1" id="checkbox{{territorio.id}}" (change)="seleccionTerritorio(territorio)" [(ngModel)]="territorio.estatus"/>
+                    <label for="checkbox{{territorio.id}}"></label>
+                </div>
+                <div class="u-flex-column" style="margin-left: 7.5px;">
+                    <label for="checkbox{{territorio.id}}" class="u-txt-medium">{{territorio.nombre}}</label>
+                    <label for="checkbox{{territorio.id}}" class="u-txt-demibold u-txt-gris">{{territorio.piezas}} pzas.</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="u-flex-center u-mt-1" style="padding: 0px 24px;">
         <button mat-flat-button color="primary" class="btn" mat-dialog-close>{{data.botonCancelar}}</button>
         <button mat-flat-button color="primary" class="btn" mat-dialog-close>{{data.botonAceptar}}</button>
     </div>
