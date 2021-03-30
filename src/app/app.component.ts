@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderFooterService } from './shared/services/headerFooterService.service';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ciclo-vida';
+  constructor(public _HeaderFooterService: HeaderFooterService) {}
 }

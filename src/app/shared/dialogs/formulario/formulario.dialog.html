@@ -3,7 +3,7 @@
         <div class="dialog-titulo u-flex-center u-txt-medium u-fz-18">{{data.titulo}}</div>
     </div>
     <hr>
-    <div class="row" style="padding: 0px 24px;">
+    <div class="row" style="padding: 0px 24px; margin-bottom: 21px;">
         <div class="col-6" *ngFor="let territorio of territorios">
             <div class="u-flex u-fz-13" style="margin-top: 31.82px;">
                 <div class="territorios">
@@ -18,9 +18,39 @@
         </div>
     </div>
     <hr>
-    <div class="u-flex-center u-mt-1" style="padding: 0px 24px;">
-        <button mat-flat-button color="primary" class="btn" mat-dialog-close>{{data.botonCancelar}}</button>
-        <button mat-flat-button color="primary" class="btn" mat-dialog-close>{{data.botonAceptar}}</button>
+    <div class="u-flex u-justify-arround u-mt-1 u-fz-13" style="padding: 0px 24px;">
+        <div class="u-cursor-p u-txt-demibold u-txt-rojo" mat-dialog-close>Cancelar</div>
+        <div class="u-cursor-p u-txt-demibold u-txt-azul" [mat-dialog-close]="true">Continuar</div>
+    </div>
+</div>
+<div style="max-width: 341px; padding: 21px 0px;" *ngIf="data.tipo === 1">
+    <div class="u-fz-15" style="padding: 0px 27px; margin-bottom: 21px;">
+        Con esta acción <strong>impactarás a más de</strong> <strong class="u-txt-amarillo"> 400,000 clientes</strong> dentro de los territorios seleccionados.
+    </div>
+    <hr>
+    <div style="padding: 0px 27px; margin-top: 33px;">
+        <div class="u-fz-18 u-txt-demibold" >Set Restonic Queen Size Grey</div>
+        <div class="u-fz-13">SKU: 14002532</div>
+        <div class="u-position-r">
+            <img src="assets/img/colchon.png" style="width: 100%; margin: 0 auto; margin-top: 20px;">
+            <mat-icon svgIcon="ico-promo" class="u-position-a" style="width: 45.5px;height: 45.5px;left: 63px;top: 131px;"></mat-icon>
+            <label class="u-position-a u-txt-blanco strong" style="left: 72px;top: 143px;">80%</label>
+        </div>
+    </div>
+
+    <div style="padding: 0px 27px;" class="u-flex-column-center u-w-100 u-border-box u-align-center u-mt-1">
+        <div class="u-fz-18 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
+        <strong style="font-size: 22px;">$1,629.8</strong>
+    </div>
+    <div class="u-flex u-justify-arround u-mt-2 u-fz-13" style="padding: 0px 27px;">
+        <button mat-flat-button class="btn btn-blanco-2 u-mr-1">Cancelar</button>
+        <button mat-flat-button color="primary" class="btn" [mat-dialog-close]="true">Enviar solicitud</button>
     </div>
 </div>
 
+<div style="max-width: 300px; padding: 21px 0px;" *ngIf="data.tipo === 2">
+    <div class="u-fz-15" style="padding: 0px 27px;">Tu solicitud esta en <strong>proceso de autorización.</strong></div>
+    <div class="dialog-buttons-container" style="padding: 0px 27px;">
+        <button mat-flat-button class="u-fz-13 u-txt-demibold u-txt-azul" [mat-dialog-close]="true">Entendido</button>    
+    </div>
+</div>

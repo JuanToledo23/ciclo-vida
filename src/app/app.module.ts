@@ -18,6 +18,7 @@ import * as echarts from 'echarts';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AccionesTiendaComponent } from './components/acciones-tienda/acciones-tienda.component';
 import { FormularioDialog } from './shared/dialogs/formulario/formulario.dialog';
+import { ComboDescuentoComponent } from './components/combo-descuento/combo-descuento.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormularioDialog } from './shared/dialogs/formulario/formulario.dialog'
     FooterComponent,
     InventarioDetalleComponent,
     AccionesTiendaComponent,
-    FormularioDialog
+    FormularioDialog,
+    ComboDescuentoComponent
   ],
   imports: [
     BrowserModule,

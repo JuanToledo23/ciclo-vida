@@ -546,6 +546,13 @@ strong {
     color: $color-gris;
 }
 
+.u-txt-rojo {
+    color: #CC3333;
+}
+.u-txt-azul {
+    color: #2780eb;
+}
+
 .u-bg-gris2 {
     background-color: $color-gris2;
 }
@@ -616,4 +623,19 @@ hr {
     display: block;
     border-width: 1px;
     border-bottom: unset;
+}
+
+.desac-button {
+    background-color: #EBEBEB !important;
+    color: #D1D1D2 !important;
+    cursor: none; 
+    pointer-events: none;
+}
+
+.u-border-box {
+    box-sizing: border-box;
+}
+
+.u-cursor-pointer {
+    cursor: pointer;
 }

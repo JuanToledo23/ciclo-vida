@@ -1,18 +1,18 @@
-<div class="u-pad-2 u-scroll-y">
+<div class="u-pad-2 u-scroll-y" style="height: 406px;">
     <div class="u-fz-13 u-txt-demibold">Configura la acción, previsualizala y solicita su autorización para los 5,000 colchones <strong class="u-txt-amarillo">Set Restonic Queen Size Grey.</strong></div>
     <div class="row" style="margin-top: 16.87px;">
         <div class="col-12">
             <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona una opción</div>
             <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="accion" (selectionChange)="cambioAccion()">
                 <mat-option value="opt1">Generar descuento a producto</mat-option>
-                <mat-option value="opt2">Generar un bombo con descuento</mat-option>
+                <mat-option value="opt2">Generar un combo con descuento</mat-option>
                 <mat-option value="opt3">Generar un combo con regalo</mat-option>
             </mat-select>
         </div>
         <ng-container *ngIf="opt1">
             <div class="col-12" style="margin-top: 29px;">
                 <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿En qué canal lo quieres aplicar?</div>
-                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
+                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="canal" (selectionChange)="validarFormulario()">
                     <mat-option value="opt1">Opción 1</mat-option>
                     <mat-option value="opt2">Opción 2</mat-option>
                     <mat-option value="opt3">Opción 3</mat-option>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-12" style="margin-top: 29px;">
                 <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Qué descuento deseas aplicar?</div>
-                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
+                <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="descuento" (selectionChange)="validarFormulario()">
                     <mat-option value="opt1">Opción 1</mat-option>
                     <mat-option value="opt2">Opción 2</mat-option>
                     <mat-option value="opt3">Opción 3</mat-option>
@@ -29,9 +29,34 @@
             <div class="col-12" style="margin-top: 29px;">
                 <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿En qué territorio lo quieres aplicar?</div>
                 <div class="u-cursor-p" (click)="seleccionarTerritorio()">
-                    <input type="text" class="u-input-read">
+                    <input type="text" class="u-input-read" [(ngModel)]="territoriosSeleccionados">
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="opt2">
+            <div class="col-12" style="margin-top: 29px;">
+                <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Con qué artículo se ligará?</div>
+                <div class="u-position-r" *ngFor="let articulo of articulosLigar" style="margin-top: 15.12px;">
+                    <input type="text" placeholder="Buscar SKU" [(ngModel)]="articulo.texto" (keyup)="validarFormulario2()" style="padding: 4px 10px 4px 28px;">
+                    <mat-icon svgIcon="ico-lupa" style="width: 15px; height: 15px; position: absolute;top: 7px;left: 8px;" *ngIf="!articulo.texto"></mat-icon>
+                    <button mat-icon-button aria-label="Eliminar" style="position:absolute; top: -6px;right: -4px;" *ngIf="articulo.texto" (click)="articulo.texto = ''">
+                        <mat-icon svgIcon="ico-basura" style="width: 15px; height: 15px;"></mat-icon>
+                    </button>
+                </div>
+                <div class="u-flex-end u-txt-azul u-cursor-pointer u-fz-13" style="margin-top: 11px;" (click)="agregrArticulo()">
+                    Agregar
                 </div>
             </div>
         </ng-container>
     </div>
+</div>
+
+
+
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;" *ngIf="opt1">
+    <button mat-flat-button color="primary" class="btn" [ngClass]="{'desac-button': !continueButton}" (click)="previsualizar()">Previsualizar</button>
+</div>
+
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;" *ngIf="opt2">
+    <button mat-flat-button color="primary" class="btn" [ngClass]="{'desac-button': !continueButton2}" [routerLink]="['/combo-descuento']" routerLinkActive="router-link-active" >Continuar</button>
 </div>

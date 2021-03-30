@@ -69,5 +69,13 @@ export class MaterialModule {
       "ico-editar",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/editar.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "ico-basura",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/basura.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ico-lupa",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/lupa.svg")
+    );
   }
 }

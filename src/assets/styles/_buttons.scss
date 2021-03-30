@@ -23,3 +23,25 @@
 .btn-activo {
     font-family: $font-bold !important;
 }
+
+.btn-blanco {
+    color: #2780eb;
+    border: solid 1px #2780eb !important;
+    border-radius: 2px;
+}
+
+.btn-blanco-2 {
+    color: #2780eb;
+    border-radius: 2px;
+}
+
+.btn-blanco-2:hover {
+    background-color: #FFEEDB;
+}
+
+.btn-blanco-3 {
+    color: #999999;
+}
+.btn-blanco-3:hover {
+    background-color: #F3F3F3;
+}

@@ -352,7 +352,7 @@ chartOption: EChartsOption = {
     console.log(this.articuloMostrado);
 
 
-    this._HeaderFooterService.construirHeader('', 'Inventario', true, false); 
+    this._HeaderFooterService.construirHeader('', 'Inventario', true, false, true); 
     for (var i = 0; i < 57; i++) {
       this.data1.push(Math.floor(Math.random() * 1000000) + 500000);
       this.data2.push(Math.floor(Math.random() * 1000000) + 500000);

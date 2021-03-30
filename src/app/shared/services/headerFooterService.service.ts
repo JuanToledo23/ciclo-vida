@@ -11,6 +11,7 @@ export class HeaderFooterService {
     tituloAmarillo: string = '';
     regresar: boolean = false;
     buscador: boolean = false;
+    mostrarFooter: boolean = true;
 
     constructor(
         public location: Location
@@ -20,12 +21,13 @@ export class HeaderFooterService {
         this.location.back();
     }
 
-    construirHeader(ico: string, titulo: string, regresar: boolean, buscador: boolean, tituloAmarillo?: string) {
+    construirHeader(ico: string, titulo: string, regresar: boolean, buscador: boolean, mostrarFooter: boolean, tituloAmarillo?: string) {
         this.iconoHeader = ico;
         this.titulo = titulo;
         this.regresar = regresar;
         this.buscador = buscador;
         this.tituloAmarillo = tituloAmarillo;
+        this.mostrarFooter = mostrarFooter;
     }
 }
 
