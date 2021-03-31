@@ -55,5 +55,12 @@ export class TerritoriosService {
         return this.territoriosSeleccionados;
     }
 
+    limpiarTerritorios() {
+        this.territorios.forEach(element => {
+            element.estatus = false
+        });
+        this.territoriosSeleccionados = [];
+    }
+
 }
 

@@ -45,7 +45,7 @@
         <div class="u-fz-15">{{articuloMostrado.piezas}} pzas.</div>
     </div>
     <div class="u-flex-center-y" style="margin: 18px 0px;">
-        <div class="u-flex-center-y u-cursor-p">
+        <div class="u-flex-center-y u-cursor-p" (click)="descuentoProceso(articuloMostrado)">
             <div class="u-txt-amarillo u-fz-13 strong">Descuento en proceso de autorización</div>
             <mat-icon svgIcon="ico-editar" style="width: 15px; height: 15px; margin-left: 6px;"></mat-icon>
         </div>
@@ -56,10 +56,15 @@
             <div class="u-fz-12 u-txt-medium">&nbsp;</div>
             <div class="u-fz-17 strong">$3,773</div>
         </div>
-        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;">
+        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;" *ngIf="!precios" (click)="precios = !precios">
             <div class="u-fz-13 u-txt-medium">Precio de venta</div>
             <div class="u-fz-12 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
             <div class="u-fz-17 strong">$4,074</div>
+        </div>
+        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;" *ngIf="precios" (click)="precios = !precios">
+            <div class="u-fz-13 u-txt-medium">Precio de crédito</div>
+            <div class="u-fz-12 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
+            <div class="u-fz-17 strong">$3,020</div>
         </div>
         <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 0px 0px 13px;">
             <div class="u-fz-13 u-txt-medium">Efectividad</div>
@@ -113,10 +118,10 @@
     </div>
     <div class="u-fz-17 u-txt-demibold u-mt-2">Inventario vs. Venta (unidades)</div>
     <div class="u-flex-center u-mt-1">
-        <button mat-flat-button color="primary" class="btn btn-activo" style="width: 72px;">Pieza</button>
-        <button mat-flat-button class="btn btn-gris" style="margin-left: 31px; width: 72px;">Monto</button>
+        <button mat-flat-button class="btn" style="width: 72px;" [ngClass]="{'btn-activo': !botonesGrafica}" (click)="cambioGrafica('pieza')">Pieza</button>
+        <button mat-flat-button class="btn btn-gris" style="margin-left: 31px; width: 72px;" [ngClass]="{'btn-activo': botonesGrafica}" (click)="cambioGrafica('monto')">Monto</button>
     </div>
-    <div echarts [options]="chartOption" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
+    <div echarts [options]="chartOption" [autoResize]="true" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
 
     <div class="row" style="margin-top: 28.7px;">
         <div class="col-6 u-flex u-align-center">
@@ -169,7 +174,7 @@
 
     <div class="u-flex-between u-bg-gris2" style="margin-top: 45.11px;">
         <div class="u-flex-center u-fz-12 strong u-txt-blanco u-bg-rojo" style="width:111.37px; padding: 2px 0px;">Inv. en riesgo</div>
-        <div class="u-txt-link"><span class="u-fz-12 u-txt-medium">259</span><span class="u-fz-10 u-txt-medium">(tienda)</span></div>
+        <div class="u-txt-link" [routerLink]="['/inventario-riesgo']" routerLinkActive="router-link-active" ><span class="u-fz-12 u-txt-medium">259</span><span class="u-fz-10 u-txt-medium">(tienda)</span></div>
         <div class="u-fz-12 u-txt-medium">59%</div>
         <div class="strong u-fz-12" style="margin-right: 16px;">$2,162,739</div>
     </div>

@@ -13,6 +13,13 @@ export class HeaderFooterService {
     buscador: boolean = false;
     mostrarFooter: boolean = true;
 
+    opcionesFooter = [
+        { nombre: 'Inventario', img: 'ico-inventario-activo', rute: '', estatus: true },
+        { nombre: 'Matriz de riesgo', img: 'ico-llama', rute: '/matriz-inventario-riesgo', estatus: false },
+        { nombre: 'Alertas', img: 'ico-campana', rute: '', estatus: false },
+        { nombre: 'Más', img: 'ico-menu', rute: '', estatus: false },
+    ];
+
     constructor(
         public location: Location
     ) { }
@@ -28,6 +35,10 @@ export class HeaderFooterService {
         this.buscador = buscador;
         this.tituloAmarillo = tituloAmarillo;
         this.mostrarFooter = mostrarFooter;
+    }
+
+    getOpcionesFooter() {
+        return this.opcionesFooter;
     }
 }
 

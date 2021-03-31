@@ -19,6 +19,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AccionesTiendaComponent } from './components/acciones-tienda/acciones-tienda.component';
 import { FormularioDialog } from './shared/dialogs/formulario/formulario.dialog';
 import { ComboDescuentoComponent } from './components/combo-descuento/combo-descuento.component';
+import { InventarioRiesgoComponent } from './components/inventario-riesgo/inventario-riesgo.component';
+import { MatrizInventarioRiesgoComponent } from './components/matriz-inventario-riesgo/matriz-inventario-riesgo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ComboDescuentoComponent } from './components/combo-descuento/combo-desc
     InventarioDetalleComponent,
     AccionesTiendaComponent,
     FormularioDialog,
-    ComboDescuentoComponent
+    ComboDescuentoComponent,
+    InventarioRiesgoComponent,
+    MatrizInventarioRiesgoComponent
   ],
   imports: [
     BrowserModule,

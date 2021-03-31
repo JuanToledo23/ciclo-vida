@@ -1,7 +1,7 @@
 <mat-toolbar class="header-toolbar u-flex-between">
     <div class="u-flex-center">
         <button mat-icon-button class="example-icon u-mr-1" aria-label="Regresar" *ngIf="!_HeaderFooterService.regresar">
-            <mat-icon [svgIcon]="_HeaderFooterService.iconoHeader" class="u-icon-md"></mat-icon>
+            <mat-icon [svgIcon]="_HeaderFooterService.iconoHeader" class="u-icon-md u-ico-amarillo"></mat-icon>
         </button>
         <button mat-icon-button class="example-icon u-mr-1" aria-label="Regresar" *ngIf="_HeaderFooterService.regresar" (click)="_HeaderFooterService.goBack()">
             <mat-icon svgIcon="ico-regresar" class="u-icon-md"></mat-icon>

@@ -54,3 +54,72 @@
         <button mat-flat-button class="u-fz-13 u-txt-demibold u-txt-azul" [mat-dialog-close]="true">Entendido</button>    
     </div>
 </div>
+
+<div style="max-width: 341px; padding: 21px 0px;" *ngIf="data.tipo === 3">
+    <div class="u-fz-15" style="padding: 0px 27px; margin-bottom: 21px;">
+        Con esta acción <strong>impactarás a más de</strong> <strong class="u-txt-amarillo"> 400,000 clientes</strong> dentro de los territorios seleccionados.
+    </div>
+    <hr>
+    <div style="padding: 0px 27px; margin-top: 33px;">
+        <div class="u-fz-18 strong u-txt-amarillo u-txt-center">En la compra de estos artículos</div>
+        <div class="u-flex-center" style="margin-top: 18px;">
+            <div class="u-position-r">
+                <div class="u-fz-13 u-txt-demibold" >Box América Queen</div>
+                <div class="u-fz-13 u-txt-medium">SKU: 14002532</div>
+                <div style="height: 77px;">
+                    <img src="assets/img/box1.png" style="width: 105px; margin: 0 auto; margin-top: 5px;">
+                    <strong class="u-fz-13 u-position-a" style="right: 0; bottom: 5px;">$2,839</strong>
+                </div>
+            </div>
+            <div class="u-flex-column u-justify-center u-align-center" style="height: 134px;">
+                <mat-icon svgIcon="ico-mas" style="width: 29px;height: 29px;"></mat-icon>
+            </div>
+            <div class="u-position-r">
+                <div class="u-fz-13 u-txt-demibold" >Box América Queen</div>
+                <div class="u-fz-13 u-txt-medium">SKU: 14002532</div>
+                <div style="height: 77px;">
+                    <img src="assets/img/box2.png" style="width: 105px; margin: 0 auto; margin-top: 5px; margin-left: 8px;">
+                    <strong class="u-fz-13 u-position-a" style="right: 0; bottom: 5px;">$3,069</strong>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="u-flex-column u-align-center" style="margin-top: 14px;">
+            <div class="u-fz-18 strong u-txt-amarillo u-txt-center">Llévate</div>
+            <div>
+                <div class="u-fz-13 u-txt-demibold" >Set Restonic Queen Size Grey</div>
+                <div class="u-fz-13 u-txt-medium">SKU: 14002532</div>
+                <div class="u-position-r">
+                    <img src="assets/img/colchon.png" style="width: 128px; margin: 0 auto; margin-top: 5px;">
+                    <mat-icon svgIcon="ico-promo" class="u-position-a" style="width: 27.51px;height: 27.51px;left: 70px;top: 52px;"></mat-icon>
+                    <label class="u-position-a u-txt-blanco strong u-fz-10" style="left: 73px;top: 60px;">80%</label>
+                    <div class="u-fz-10 u-txt-medium u-txt-gris u-txt-through u-position-a" style="right: 18px;bottom: 39px;">$8,149</div>
+                    <strong class="u-fz-13 u-position-a" style="right: 9px;bottom: 20px;">$1,629.8</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="u-flex u-justify-arround u-mt-2 u-fz-13" style="padding: 0px 27px;">
+        <button mat-flat-button class="btn btn-blanco-2 u-mr-1">Cancelar</button>
+        <button mat-flat-button color="primary" class="btn" [mat-dialog-close]="true">Enviar solicitud</button>
+    </div>
+</div>
+
+<div style="max-width: 341px;" class="u-position-r u-scroll-y" *ngIf="data.tipo === 4">
+    <div class="u-position-a" style="top: -33px;right: 0;" mat-dialog-close>
+        <mat-icon svgIcon="ico-close" style="width: 20.34px;"></mat-icon>
+    </div>
+    <div style="padding: 21px 24px 46.19px 24px;position: sticky;top: 0px;" class="u-border-bottom u-bg-blanco">
+        <div class="dialog-titulo u-flex-center u-txt-medium u-fz-18">{{data.titulo}}</div>
+    </div>
+    <div style="padding: 2px 26.75px;position: sticky;top: 68.19px;" class="u-fz-13 u-txt-demibold u-border-bottom u-flex u-bg-blanco">
+        <div>Tienda</div>
+        <div style="margin-left: 135.36px;">Piezas</div>
+        <div style="margin-left: 26.13px;">Costo</div>
+    </div>
+    <div style="padding: 21.3px 16px;" class="u-border-bottom u-flex u-fz-13 u-txt-medium" *ngFor="let item of tiendas">
+        <div style="width: 167px;">{{item.nombre}}</div>
+        <div style="width: 31.98px; margin-left: 12px;">{{item.piezas}}</div>
+        <div style="width: 29.98px; margin-left: 41px;">{{item.costo}}</div>
+    </div>
+</div>

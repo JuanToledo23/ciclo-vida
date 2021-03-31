@@ -77,5 +77,13 @@ export class MaterialModule {
       "ico-lupa",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/lupa.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "ico-mas",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/mas.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ico-close",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/close.svg")
+    );
   }
 }

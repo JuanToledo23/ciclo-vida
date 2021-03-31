@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EChartsOption } from 'echarts';
 import { HeaderFooterService } from 'src/app/shared/services/headerFooterService.service';
 import { InventarioService } from 'src/app/shared/services/inventarioService.service';
@@ -40,12 +40,13 @@ linea1 = [];
 linea2 = [];
 linea3 = [];
 
-link = [];
 
 colorAzul: string = '#476DC5';
 colorVerde: string = '#3FAE2B';
 colorAmarillo: string = '#FFCC00';
 
+precios: boolean = false;
+botonesGrafica: boolean = false;
 
 chartOption: EChartsOption = {
   tooltip: {},
@@ -341,7 +342,7 @@ chartOption: EChartsOption = {
 
 
 
-  constructor(public _HeaderFooterService: HeaderFooterService, private route: ActivatedRoute, public _InventarioService: InventarioService) {
+  constructor(public _HeaderFooterService: HeaderFooterService, private route: ActivatedRoute, public _InventarioService: InventarioService, private router: Router) {
 
     this.inventario = this._InventarioService.getInventario();
 
@@ -349,34 +350,36 @@ chartOption: EChartsOption = {
     const idFromRoute = Number(routeParams.get('id'));
     this.articuloMostrado = this.inventario.find((video: { id: number; }) => video.id === idFromRoute);
 
-    console.log(this.articuloMostrado);
-
 
     this._HeaderFooterService.construirHeader('', 'Inventario', true, false, true); 
+    this.generarDatos(1000000);
+  }
+
+  generarDatos(max) {
     for (var i = 0; i < 57; i++) {
-      this.data1.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data2.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data3.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data4.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data5.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data6.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data7.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data8.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data9.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data10.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data11.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data12.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data13.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data14.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data15.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data16.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data17.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data18.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data19.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data20.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.data21.push(Math.floor(Math.random() * 1000000) + 500000);
-      this.linea1.push(Math.floor(Math.random() * 1000000));
-      this.linea2.push(Math.floor(Math.random() * 1000000));
+      this.data1.push(Math.floor(Math.random() * max) + 500000);
+      this.data2.push(Math.floor(Math.random() * max) + 500000);
+      this.data3.push(Math.floor(Math.random() * max) + 500000);
+      this.data4.push(Math.floor(Math.random() * max) + 500000);
+      this.data5.push(Math.floor(Math.random() * max) + 500000);
+      this.data6.push(Math.floor(Math.random() * max) + 500000);
+      this.data7.push(Math.floor(Math.random() * max) + 500000);
+      this.data8.push(Math.floor(Math.random() * max) + 500000);
+      this.data9.push(Math.floor(Math.random() * max) + 500000);
+      this.data10.push(Math.floor(Math.random() * max) + 500000);
+      this.data11.push(Math.floor(Math.random() * max) + 500000);
+      this.data12.push(Math.floor(Math.random() * max) + 500000);
+      this.data13.push(Math.floor(Math.random() * max) + 500000);
+      this.data14.push(Math.floor(Math.random() * max) + 500000);
+      this.data15.push(Math.floor(Math.random() * max) + 500000);
+      this.data16.push(Math.floor(Math.random() * max) + 500000);
+      this.data17.push(Math.floor(Math.random() * max) + 500000);
+      this.data18.push(Math.floor(Math.random() * max) + 500000);
+      this.data19.push(Math.floor(Math.random() * max) + 500000);
+      this.data20.push(Math.floor(Math.random() * max) + 500000);
+      this.data21.push(Math.floor(Math.random() * max) + 500000);
+      this.linea1.push(Math.floor(Math.random() * max));
+      this.linea2.push(Math.floor(Math.random() * max));
       this.linea3.push(Math.floor(0));
     }
 
@@ -385,13 +388,58 @@ chartOption: EChartsOption = {
   }
 
   for (let index = 1; index <= 52; index++) {
-    this.xAxisData.push('Sem ' + index);
-    this.linea2.push(140000);
-    this.linea3.push(Math.floor(Math.random() * 1000000));
-  } 
+      this.xAxisData.push('Sem ' + index);
+      this.linea2.push(140000);
+      this.linea3.push(Math.floor(Math.random() * max));
+    }
+  }
+
+  limpiarData() {
+    this.xAxisData = [];
+    this.data1 = [];
+    this.data2 = [];
+    this.data3 = [];
+    this.data4 = [];
+    this.data5 = [];
+    this.data6 = [];
+    this.data7 = [];
+    this.data8 = [];
+    this.data9 = [];
+    this.data10 = [];
+    this.data11 = [];
+    this.data12 = [];
+    this.data13 = [];
+    this.data14 = [];
+    this.data15 = [];
+    this.data16 = [];
+    this.data17 = [];
+    this.data18 = [];
+    this.data19 = [];
+    this.data20 = [];
+    this.data21 = [];
+
+    this.linea1 = [];
+    this.linea2 = [];
+    this.linea3 = [];
   }
 
   ngOnInit(): void {
+  }
+
+  descuentoProceso(articuloMostrado) {
+    this.router.navigate(['/acciones-tienda', articuloMostrado.id]);
+  }
+
+  cambioGrafica(tipo) {
+    this.limpiarData();
+    if(tipo === 'pieza'){
+      this.botonesGrafica = false;
+      this.generarDatos(1000000);
+    } else if (tipo === 'monto') {
+      this.botonesGrafica = true;
+      this.generarDatos(22000000);
+    }
+    console.log(this.chartOption);
   }
 
 }

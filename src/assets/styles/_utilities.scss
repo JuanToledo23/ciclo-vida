@@ -528,6 +528,9 @@ strong {
     color: #FFCC00;
 }
 
+.u-bg-blanco {
+    background-color: #FFFFFF;
+}
 .u-bg-amarillo {
     background-color: #FFCC00;
 }
@@ -545,6 +548,9 @@ strong {
 .u-txt-gris {
     color: $color-gris;
 }
+.u-txt-gris-claro {
+    color: #BEBEBE;
+}
 
 .u-txt-rojo {
     color: #CC3333;
@@ -555,6 +561,9 @@ strong {
 
 .u-bg-gris2 {
     background-color: $color-gris2;
+}
+.u-bg-gris3 {
+    background-color: #666666;
 }
 
 .u-border-r4 {
@@ -639,3 +648,22 @@ hr {
 .u-cursor-pointer {
     cursor: pointer;
 }
+
+.u-nowrap {
+    white-space: nowrap;
+}
+
+.u-ico-gris svg {
+    fill: #666666;
+    /* stroke: #ff0000 !important; */
+}
+.u-ico-amarillo svg {
+    fill: #FFCC00 !important;
+    /* stroke: #ff0000 !important; */
+}
+
+/* .opcion-activa mat-icon svg {
+    fill: '#FFCC00' !important;
+    stroke: '#FFCC00' !important;
+
+} */

@@ -1,27 +1,8 @@
 <mat-toolbar class="footer-toolbar u-flex-between">
-    <div class="u-flex-column u-align-center">
-        <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;">
-            <mat-icon svgIcon="ico-inventario-activo" class="u-icon-md"></mat-icon>
-            
+    <div class="u-flex-column u-align-center" *ngFor="let item of opcionesFooter">
+        <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;" (click)="cambioOpcion(item)" [routerLink]="[item.rute]" routerLinkActive="router-link-active" >
+            <mat-icon [svgIcon]="item.img" class="u-icon-md u-ico-gris" [ngClass]="{'u-ico-amarillo': item.estatus}"></mat-icon>
         </button>
-        <div class="u-fz-10 strong">Inventario</div>
-    </div>
-    <div class="u-flex-column u-align-center">
-        <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;">
-            <mat-icon svgIcon="ico-llama" class="u-icon-md"></mat-icon>
-        </button>
-        <div class="u-fz-10">Matriz de riesgo</div>
-    </div>
-    <div class="u-flex-column u-align-center">
-        <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;">
-            <mat-icon svgIcon="ico-campana" class="u-icon-md"></mat-icon>
-        </button>
-        <div class="u-fz-10">Alertas</div>
-    </div>
-    <div class="u-flex-column u-align-center">
-        <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;">
-            <mat-icon svgIcon="ico-menu" class="u-icon-md"></mat-icon>
-        </button>
-        <div class="u-fz-10">Más</div>
+        <div class="u-fz-10" [ngClass]="{'strong': item.estatus}">{{item.nombre}}</div>
     </div>
 </mat-toolbar>

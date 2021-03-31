@@ -1,0 +1,20 @@
+<div class="u-scroll-y">
+    <div style="padding: 18.32px 16px;position: sticky;top: 0;" class="u-fz-13 u-txt-demibold u-border-bottom u-bg-blanco">
+        Tienes 500,000 colchones discontinuo sin venta.
+    </div>
+    <div style="padding: 2px 16px;position: sticky;top: 55.63px;" class="u-fz-13 u-txt-demibold u-border-bottom u-flex u-bg-blanco">
+        <div>Territorio</div>
+        <div style="margin-left: 40px;">Pzas.</div>
+        <div style="margin-left: 18.81px;">Tiendas</div>
+        <div style="margin-left: 21.84px;">Costo</div>
+    </div>
+    <div style="padding: 21.3px 16px;" class="u-border-bottom u-flex u-fz-13 u-txt-medium" *ngFor="let item of inventarioRiesgo">
+        <div style="width: 82.95px;" class="u-nowrap">{{item.territorio}}</div>
+        <div style="width: 31.98px; margin-left: 12px;">{{item.piezas}}</div>
+        <div style="width: 13px;margin-left: 35px;" class="u-txt-link" (click)="abrirTiendas()">{{item.tiendas}}</div>
+        <div style="width: 29.98px; margin-left: 41px;">{{item.costo}}</div>
+        <div style="margin-left: 13px;">
+            <button mat-flat-button color="primary" class="btn" style="width: 69.33px;height: 23.33px;padding: unset;line-height: unset;">Acciones</button>
+        </div>
+    </div>
+</div>

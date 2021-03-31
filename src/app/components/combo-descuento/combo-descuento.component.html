@@ -3,7 +3,7 @@
     <div class="row" style="margin-top: 16.87px;">
         <div class="col-12">
             <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Qué descuento deseas aplicar al colchón Set Restonic</div>
-            <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="accion" (selectionChange)="cambioAccion()">
+            <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
                 <mat-option value="opt1">Opción 1</mat-option>
                 <mat-option value="opt2">Opción 2</mat-option>
                 <mat-option value="opt3">Opción 3</mat-option>
@@ -16,4 +16,9 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;">
+    <button mat-flat-button color="primary" class="btn" [ngClass]="{'desac-button': !continueButton}" (click)="previsualizar()">Previsualizar</button>
 </div>

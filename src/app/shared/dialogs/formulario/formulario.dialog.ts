@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { InventarioService } from '../../services/inventarioService.service';
 import { TerritoriosService } from '../../services/territotiosService.service';
 
 @Component({
@@ -10,9 +11,12 @@ export class FormularioDialog implements OnInit {
 
   territorios: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public _TerritoriosService: TerritoriosService) {
+  tiendas: any;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public _TerritoriosService: TerritoriosService, public _InventarioService: InventarioService) {
     console.log(this.data);
     this.territorios = this._TerritoriosService.getTerritorios();
+    this.tiendas = this._InventarioService.getTiendas();
   }
 
   ngOnInit(): void {

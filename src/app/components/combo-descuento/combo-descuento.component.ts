@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { FormularioDialog } from 'src/app/shared/dialogs/formulario/formulario.dialog';
 import { HeaderFooterService } from 'src/app/shared/services/headerFooterService.service';
 import { TerritoriosService } from 'src/app/shared/services/territotiosService.service';
@@ -12,7 +13,11 @@ export class ComboDescuentoComponent implements OnInit {
 
   territoriosSeleccionados: string = '';
 
-  constructor(public _HeaderFooterService: HeaderFooterService, public _TerritoriosService: TerritoriosService, public dialog: MatDialog) {
+  descuento: string = '';
+
+  continueButton: boolean = false;
+
+  constructor(public _HeaderFooterService: HeaderFooterService, public _TerritoriosService: TerritoriosService, public dialog: MatDialog, private router: Router) {
     this._HeaderFooterService.construirHeader('', 'Combo con descuento', true, false, false); 
   }
 
@@ -48,11 +53,38 @@ export class ComboDescuentoComponent implements OnInit {
   }
 
   validarFormulario() {
-    // if(this.accion === '' || this.canal === '' || this.descuento === '', this.territoriosSeleccionados === '') {
-    //   this.continueButton = false;
-    // } else {
-    //   this.continueButton = true;
-    // }
+    if(this.descuento === '', this.territoriosSeleccionados === '') {
+      this.continueButton = false;
+    } else {
+      this.continueButton = true;
+    }
+  }
+
+  previsualizar() {
+    const dialogRef = this.dialog.open(FormularioDialog, {
+      disableClose: true,
+      data: {
+          tipo: 3,
+          titulo: '',
+          botonAceptar: 'Enviar solicitud',
+          botonCancelar: 'Cancelar'
+      },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        const dialogRef = this.dialog.open(FormularioDialog, {
+          disableClose: true,
+          data: {
+              tipo: 2,
+          },
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          if(result) {
+            this.router.navigate(['/acciones-tienda']);
+          }
+        });
+      }
+    });
   }
 
 }

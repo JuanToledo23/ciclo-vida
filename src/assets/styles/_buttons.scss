@@ -22,6 +22,20 @@
 
 .btn-activo {
     font-family: $font-bold !important;
+    background-color: #ffcc00;
+    color: #ffffff;
+}
+.btn-activo2 {
+    font-family: $font-bold !important;
+    background-color: #ACACAC;
+    color: #ffffff;
+}
+
+.btn-adaptable {
+    min-width: unset !important;
+    width: unset !important;
+    padding: 0px 5px !important;
+    line-height: 30px !important;
 }
 
 .btn-blanco {
