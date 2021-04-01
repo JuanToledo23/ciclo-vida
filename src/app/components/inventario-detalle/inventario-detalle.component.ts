@@ -48,299 +48,9 @@ colorAmarillo: string = '#FFCC00';
 precios: boolean = false;
 botonesGrafica: boolean = false;
 
-chartOption: EChartsOption = {
-  tooltip: {},
-  xAxis: {
-    data: this.xAxisData,
-    name: '',
-  },
-  yAxis: [
-    {
-      id:   'AvgAxis',
-      type: 'value',
-      name: 'Inventario',
-      axisLabel: { 
-        formatter: function (value, index) {
-                  let aux = value/1000000;
-                  return aux + 'M';
-              }
-        },
-        nameTextStyle: {
-          padding: [5, 0, 15, 0]
-        }
-    },
-    {
-        id:   'MaxAxis',
-        type: 'value',
-        name: 'Venta',
-        axisLabel: { formatter: '{value}K' },
-        nameTextStyle: {
-          padding: [5, 0, 15, 60]
-        }
-    }
-  ],
-  grid: {
-    left: 25,
-    top: 40,
-    right: 46,
-    bottom: 40
-  },
-  dataZoom: [
-    {
-      type: 'inside',
-      xAxisIndex: 0,
-      minSpan: 5,
-      startValue: 0,
-      endValue: 21
-    }, 
-    {
-        type: 'slider',
-        xAxisIndex: 0,
-        minSpan: 5,
-        bottom: 50
-    }
-  ],
-  
-  series: [
-    {
-      name: 'bar',
-      type: 'bar',
-      stack: 'uno',
-      data: this.data1,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul,
-      
-    },
-    {
-      name: 'bar2',
-      type: 'bar',
-      stack: 'uno',
-      data: this.data2,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar3',
-      type: 'bar',
-      stack: 'uno',
-      data: this.data3,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar4',
-      type: 'bar',
-      stack: 'dos',
-      data: this.data4,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar5',
-      type: 'bar',
-      stack: 'dos',
-      data: this.data5,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar6',
-      type: 'bar',
-      stack: 'dos',
-      data: this.data6,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar7',
-      type: 'bar',
-      stack: 'tres',
-      data: this.data7,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar8',
-      type: 'bar',
-      stack: 'tres',
-      data: this.data8,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar9',
-      type: 'bar',
-      stack: 'tres',
-      data: this.data9,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar10',
-      type: 'bar',
-      stack: 'cuatro',
-      data: this.data10,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar11',
-      type: 'bar',
-      stack: 'cuatro',
-      data: this.data11,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar12',
-      type: 'bar',
-      stack: 'cuatro',
-      data: this.data12,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar13',
-      type: 'bar',
-      stack: 'cinco',
-      data: this.data13,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar14',
-      type: 'bar',
-      stack: 'cinco',
-      data: this.data14,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar15',
-      type: 'bar',
-      stack: 'cinco',
-      data: this.data15,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar16',
-      type: 'bar',
-      stack: 'seis',
-      data: this.data16,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar17',
-      type: 'bar',
-      stack: 'seis',
-      data: this.data17,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar18',
-      type: 'bar',
-      stack: 'seis',
-      data: this.data18,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
-    {
-      name: 'bar19',
-      type: 'bar',
-      stack: 'siete',
-      data: this.data19,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAzul
-    },
-    {
-      name: 'bar20',
-      type: 'bar',
-      stack: 'siete',
-      data: this.data20,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorVerde
-    },
-    {
-      name: 'bar21',
-      type: 'bar',
-      stack: 'siete',
-      data: this.data21,
-      barGap: '50%',
-      barCategoryGap: '3%',
-      color: this.colorAmarillo
-    },
+chartOption: any = {};
 
-    {
-      type: 'line',
-      data: this.linea1,
-      yAxisIndex: 1,
-      color: '#FF9F17',
-      showAllSymbol: 'auto',
-      symbol: 'circle',
-      symbolSize: 7,
-      lineStyle: {
-        width: 2
-      },
-    },
-    {
-      type: 'line',
-      data: this.linea2,
-      yAxisIndex: 1,
-      color: '#15b5f7',
-      showAllSymbol: 'auto',
-      symbol: 'circle',
-      symbolSize: 7,
-      lineStyle: {
-        color: '#15b5f7',
-        width: 2
-      },
-      itemStyle: {
-        color: "#4078ca",
-        borderColor: "#15b5f7",
-        borderWidth: 1,
-      },
-    },
-    {
-      data: this.linea3,
-      yAxisIndex: 1,
-      type: 'line',
-      areaStyle: {
-        color: '#dddee0'
-      },
-      lineStyle: {
-        opacity: 0
-      },
-      itemStyle: {
-        opacity: 0
-      }
-    } 
-  ]
-}
-
-
+newChartOption: any = {};
 
   constructor(public _HeaderFooterService: HeaderFooterService, private route: ActivatedRoute, public _InventarioService: InventarioService, private router: Router) {
 
@@ -423,7 +133,302 @@ chartOption: EChartsOption = {
     this.linea3 = [];
   }
 
+  getInfo() {
+    return {
+      tooltip: {},
+      xAxis: {
+        data: this.xAxisData,
+        name: '',
+      },
+      yAxis: [
+        {
+          id:   'AvgAxis',
+          type: 'value',
+          name: 'Inventario',
+          axisLabel: { 
+            formatter: function (value, index) {
+                      let aux = value/1000000;
+                      return aux + 'M';
+                  }
+            },
+            nameTextStyle: {
+              padding: [5, 0, 15, 0]
+            }
+        },
+        {
+            id:   'MaxAxis',
+            type: 'value',
+            name: 'Venta',
+            axisLabel: { formatter: '{value}K' },
+            nameTextStyle: {
+              padding: [5, 0, 15, 60]
+            }
+        }
+      ],
+      grid: {
+        left: 25,
+        top: 40,
+        right: 46,
+        bottom: 40
+      },
+      dataZoom: [
+        {
+          type: 'inside',
+          xAxisIndex: 0,
+          minSpan: 5,
+          startValue: 0,
+          endValue: 21
+        }, 
+        {
+            type: 'slider',
+            xAxisIndex: 0,
+            minSpan: 5,
+            bottom: 50
+        }
+      ],
+      
+      series: [
+        {
+          name: 'bar',
+          type: 'bar',
+          stack: 'uno',
+          data: this.data1,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul,
+          
+        },
+        {
+          name: 'bar2',
+          type: 'bar',
+          stack: 'uno',
+          data: this.data2,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar3',
+          type: 'bar',
+          stack: 'uno',
+          data: this.data3,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar4',
+          type: 'bar',
+          stack: 'dos',
+          data: this.data4,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar5',
+          type: 'bar',
+          stack: 'dos',
+          data: this.data5,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar6',
+          type: 'bar',
+          stack: 'dos',
+          data: this.data6,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar7',
+          type: 'bar',
+          stack: 'tres',
+          data: this.data7,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar8',
+          type: 'bar',
+          stack: 'tres',
+          data: this.data8,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar9',
+          type: 'bar',
+          stack: 'tres',
+          data: this.data9,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar10',
+          type: 'bar',
+          stack: 'cuatro',
+          data: this.data10,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar11',
+          type: 'bar',
+          stack: 'cuatro',
+          data: this.data11,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar12',
+          type: 'bar',
+          stack: 'cuatro',
+          data: this.data12,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar13',
+          type: 'bar',
+          stack: 'cinco',
+          data: this.data13,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar14',
+          type: 'bar',
+          stack: 'cinco',
+          data: this.data14,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar15',
+          type: 'bar',
+          stack: 'cinco',
+          data: this.data15,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar16',
+          type: 'bar',
+          stack: 'seis',
+          data: this.data16,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar17',
+          type: 'bar',
+          stack: 'seis',
+          data: this.data17,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar18',
+          type: 'bar',
+          stack: 'seis',
+          data: this.data18,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+        {
+          name: 'bar19',
+          type: 'bar',
+          stack: 'siete',
+          data: this.data19,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAzul
+        },
+        {
+          name: 'bar20',
+          type: 'bar',
+          stack: 'siete',
+          data: this.data20,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorVerde
+        },
+        {
+          name: 'bar21',
+          type: 'bar',
+          stack: 'siete',
+          data: this.data21,
+          barGap: '50%',
+          barCategoryGap: '3%',
+          color: this.colorAmarillo
+        },
+    
+        {
+          type: 'line',
+          data: this.linea1,
+          yAxisIndex: 1,
+          color: '#FF9F17',
+          showAllSymbol: 'auto',
+          symbol: 'circle',
+          symbolSize: 7,
+          lineStyle: {
+            width: 2
+          },
+        },
+        {
+          type: 'line',
+          data: this.linea2,
+          yAxisIndex: 1,
+          color: '#15b5f7',
+          showAllSymbol: 'auto',
+          symbol: 'circle',
+          symbolSize: 7,
+          lineStyle: {
+            color: '#15b5f7',
+            width: 2
+          },
+          itemStyle: {
+            color: "#4078ca",
+            borderColor: "#15b5f7",
+            borderWidth: 1,
+          },
+        },
+        {
+          data: this.linea3,
+          yAxisIndex: 1,
+          type: 'line',
+          areaStyle: {
+            color: '#dddee0'
+          },
+          lineStyle: {
+            opacity: 0
+          },
+          itemStyle: {
+            opacity: 0
+          }
+        } 
+      ]
+    }
+  }
+
   ngOnInit(): void {
+    this.chartOption = this.getInfo();
   }
 
   descuentoProceso(articuloMostrado) {
@@ -435,11 +440,12 @@ chartOption: EChartsOption = {
     if(tipo === 'pieza'){
       this.botonesGrafica = false;
       this.generarDatos(1000000);
+      this.newChartOption = this.getInfo();
     } else if (tipo === 'monto') {
       this.botonesGrafica = true;
       this.generarDatos(22000000);
+      this.newChartOption = this.getInfo();
     }
-    console.log(this.chartOption);
   }
 
 }

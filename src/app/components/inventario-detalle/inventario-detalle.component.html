@@ -121,7 +121,7 @@
         <button mat-flat-button class="btn" style="width: 72px;" [ngClass]="{'btn-activo': !botonesGrafica}" (click)="cambioGrafica('pieza')">Pieza</button>
         <button mat-flat-button class="btn btn-gris" style="margin-left: 31px; width: 72px;" [ngClass]="{'btn-activo': botonesGrafica}" (click)="cambioGrafica('monto')">Monto</button>
     </div>
-    <div echarts [options]="chartOption" [autoResize]="true" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
+    <div echarts [options]="chartOption" [merge]="newChartOption" class="u-mt-1" style="width: 90%; margin: 0 auto;"></div>
 
     <div class="row" style="margin-top: 28.7px;">
         <div class="col-6 u-flex u-align-center">

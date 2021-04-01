@@ -21,6 +21,8 @@ import { FormularioDialog } from './shared/dialogs/formulario/formulario.dialog'
 import { ComboDescuentoComponent } from './components/combo-descuento/combo-descuento.component';
 import { InventarioRiesgoComponent } from './components/inventario-riesgo/inventario-riesgo.component';
 import { MatrizInventarioRiesgoComponent } from './components/matriz-inventario-riesgo/matriz-inventario-riesgo.component';
+import { AlertasComponent } from './components/alertas/alertas.component';
+import { MasComponent } from './components/mas/mas.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { MatrizInventarioRiesgoComponent } from './components/matriz-inventario-
     FormularioDialog,
     ComboDescuentoComponent,
     InventarioRiesgoComponent,
-    MatrizInventarioRiesgoComponent
+    MatrizInventarioRiesgoComponent,
+    AlertasComponent,
+    MasComponent
   ],
   imports: [
     BrowserModule,

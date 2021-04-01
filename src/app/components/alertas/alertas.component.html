@@ -1,0 +1,29 @@
+<div class="u-scroll-y">
+    <div style="padding: 23px 21px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="u-position-r">
+                    <input type="text" placeholder="Buscar" style="padding: 4px 10px 4px 28px;" class="input2">
+                    <mat-icon svgIcon="ico-lupa" style="width: 15px; height: 15px; position: absolute;top: 7px;left: 8px;"></mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 21px;">
+            <div *ngFor="let alerta of alertas" class="u-border-bottom" style="padding: 11.4px 8px;">
+                <div class="u-flex-between u-position-r">
+                    <div class="u-fz-13 u-txt-demibold">{{alerta.texto}}</div>
+                    <div class="u-flex-center">
+                        <div class="u-fz-12 u-txt-medium" style="color: #969696;">{{alerta.hora}}</div>
+                        <div>
+                            <mat-icon svgIcon="ico-flecha" class="u-icon-sm" style="margin-left: 11.35px;"></mat-icon>
+                        </div>
+                    </div>
+                    <div class="u-circulo-notificacion u-position-a" *ngIf="alerta.alertaNoLeida"></div>
+                </div>
+                <div class="u-fz-13 u-txt-medium">{{alerta.texto2}}</div>
+                <div class="u-fz-12 u-txt-medium block-with-text" style="color: #969696; width: 251px;">{{alerta.descripcion}}</div>
+            </div>
+        </div>
+    </div>
+</div>

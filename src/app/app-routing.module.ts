@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccionesTiendaComponent } from './components/acciones-tienda/acciones-tienda.component';
+import { AlertasComponent } from './components/alertas/alertas.component';
 import { ComboDescuentoComponent } from './components/combo-descuento/combo-descuento.component';
 import { InventarioDetalleComponent } from './components/inventario-detalle/inventario-detalle.component';
 import { InventarioRiesgoComponent } from './components/inventario-riesgo/inventario-riesgo.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'combo-descuento', component: ComboDescuentoComponent },
   { path: 'inventario-riesgo', component: InventarioRiesgoComponent },
   { path: 'matriz-inventario-riesgo', component: MatrizInventarioRiesgoComponent },
+  { path: 'alertas', component: AlertasComponent },
 ];
 
 @NgModule({

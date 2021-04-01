@@ -499,6 +499,17 @@ strong {
     border: solid #ffffff 1.5px;
 }
 
+.u-circulo-notificacion {
+    width: 10px;
+    height: 10px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #167AFF;
+    left: -17px;
+    top: 3px;
+}
+
 .u-promo {
     border: solid #CC3333 1.5px;
 }
@@ -655,15 +666,33 @@ hr {
 
 .u-ico-gris svg {
     fill: #666666;
-    /* stroke: #ff0000 !important; */
 }
 .u-ico-amarillo svg {
     fill: #FFCC00 !important;
-    /* stroke: #ff0000 !important; */
 }
 
-/* .opcion-activa mat-icon svg {
-    fill: '#FFCC00' !important;
-    stroke: '#FFCC00' !important;
 
-} */
+.block-with-text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 2.3em;
+    text-align: justify;
+    margin-right: 0em;
+    padding-right: 1em;
+}
+.block-with-text:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.block-with-text:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+}

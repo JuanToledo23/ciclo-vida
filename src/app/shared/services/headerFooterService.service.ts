@@ -16,7 +16,7 @@ export class HeaderFooterService {
     opcionesFooter = [
         { nombre: 'Inventario', img: 'ico-inventario-activo', rute: '', estatus: true },
         { nombre: 'Matriz de riesgo', img: 'ico-llama', rute: '/matriz-inventario-riesgo', estatus: false },
-        { nombre: 'Alertas', img: 'ico-campana', rute: '', estatus: false },
+        { nombre: 'Alertas', img: 'ico-campana', rute: '/alertas', estatus: false },
         { nombre: 'Más', img: 'ico-menu', rute: '', estatus: false },
     ];
 

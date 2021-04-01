@@ -14,7 +14,7 @@ export class InventarioRiesgoComponent implements OnInit {
 
   constructor(public _InventarioService: InventarioService, public _HeaderFooterService: HeaderFooterService, public dialog: MatDialog) {
     this.inventarioRiesgo = this._InventarioService.getInventarioRiesgo();
-    this._HeaderFooterService.construirHeader('', 'Inventario en riesgo', true, false, false); 
+    this._HeaderFooterService.construirHeader('', 'Inventario en riesgo', true, false, true); 
   }
 
   ngOnInit(): void {

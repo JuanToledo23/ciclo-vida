@@ -18,9 +18,9 @@
     </div>
     <div style="margin: 18px; box-shadow: 0px 1px 5px #00000029;">
         <div style="padding: 10px 16px;">
-            <div class="u-flex-between u-fz-17">
-                <div class="strong">Total</div>
-                <div class="strong">$6,490,520,272</div>
+            <div class="u-flex-between u-fz-17" [ngClass]="{'u-txt-rojo': botonesRotacion[5].estatus}">
+                <div class="strong">{{textoIzquierda}}</div>
+                <div class="strong">{{textoDerecha}}</div>
             </div>
 
             <div class="u-fz-13 u-txt-demibold">
@@ -35,9 +35,66 @@
             <div class="u-fz-12 u-txt-gris-claro">Rotación</div>
             <div class="u-flex-between">
                 <ng-container *ngFor="let boton of botonesRotacion">
-                    <button mat-flat-button class="btn btn-gris btn-adaptable" [ngClass]="{'btn-activo2': boton.estatus}">{{boton.nombre}}</button>
+                    <button mat-flat-button class="btn btn-gris btn-adaptable" [ngClass]="{'btn-activo2': boton.estatus}" (click)="selecionarOpcion(boton)">{{boton.nombre}}</button>
                 </ng-container>
             </div>
         </div>
+        <div class="u-flex-between" style="padding: 10px 16px;">
+            <div class="u-flex-column" style="width: 58px; height: 200px;">
+                <div *ngFor="let item of discontinuo" class="u-flex-center u-w-100 u-txt-demibold u-txt-blanco u-fz-13" [style.background-color]="item.color" [style.height.%]="porcentaje(item.value, sumatoria(discontinuo))">{{item.value}}M</div>
+                <div class="u-flex-column-center u-align-center" style="margin-top: 11px;">
+                    <div class="u-fz-13 u-txt-medium u-txt-gris">Discontinuo</div>
+                    <div class="u-fz-13 u-txt-demibold u-txt-rojo u-txt-link">{{sumatoria(discontinuo)}}M</div>
+                </div>
+            </div>
+            <div class="u-flex-column" style="width: 58px; height: 200px;">
+                <div *ngFor="let item of nr" class="u-flex-center u-w-100 u-txt-demibold u-txt-blanco u-fz-13" [style.background-color]="item.color" [style.height.%]="porcentaje(item.value, sumatoria(nr))">{{item.value}}M</div>
+                <div class="u-flex-column-center u-align-center" style="margin-top: 11px;">
+                    <div class="u-fz-13 u-txt-medium u-txt-gris">NR</div>
+                    <div class="u-fz-13 u-txt-demibold u-txt-link">{{sumatoria(nr)}}M</div>
+                </div>
+            </div>
+            <div class="u-flex-column" style="width: 58px; height: 200px;">
+                <div *ngFor="let item of linea" class="u-flex-center u-w-100 u-txt-demibold u-txt-blanco u-fz-13" [style.background-color]="item.color" [style.height.%]="porcentaje(item.value, sumatoria(linea))">{{item.value}}M</div>
+                <div class="u-flex-column-center u-align-center" style="margin-top: 11px;">
+                    <div class="u-fz-13 u-txt-medium u-txt-gris">Línea</div>
+                    <div class="u-fz-13 u-txt-demibold u-txt-link">{{sumatoria(linea)}}M</div>
+                </div>
+            </div>
+            <div class="u-flex-column" style="width: 58px; height: 200px;">
+                <div *ngFor="let item of nuevo" class="u-flex-center u-w-100 u-txt-demibold u-txt-blanco u-fz-13" [style.background-color]="item.color" [style.height.%]="porcentaje(item.value, sumatoria(nuevo))">{{item.value}}M</div>
+                <div class="u-flex-column-center u-align-center" style="margin-top: 11px;">
+                    <div class="u-fz-13 u-txt-medium u-txt-gris">Nuevo</div>
+                    <div class="u-fz-13 u-txt-demibold u-txt-link">{{sumatoria(nuevo)}}M</div>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 0px 16px 10px 16px;">
+            <div class="u-fz-12 u-txt-gris-claro">Antigüedad</div>
+            <div class="u-flex-between" style="margin-top: 14px;">
+                <div>
+                    <div class="u-flex">
+                        <div class="cuadro" style="background-color: #CC3333;"></div>
+                        <div class="u-fz-13 u-txt-medium" style="margin-left: 2px;">+1 año</div>
+                    </div>
+                    <div class="u-fz-13 u-txt-demibold" style="margin-left: 18px;">279M</div>
+                </div>
+                <div>
+                    <div class="u-flex">
+                        <div class="cuadro" style="background-color: #FF9F17;"></div>
+                        <div class="u-fz-13 u-txt-medium" style="margin-left: 2px;">6-12 meses</div>
+                    </div>
+                    <div class="u-fz-13 u-txt-demibold" style="margin-left: 18px;">426M</div>
+                </div>
+                <div>
+                    <div class="u-flex">
+                        <div class="cuadro" style="background-color: #FFCC00;"></div>
+                        <div class="u-fz-13 u-txt-medium" style="margin-left: 2px;"> - 6 meses</div>
+                    </div>
+                    <div class="u-fz-13 u-txt-demibold" style="margin-left: 18px;">426M</div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
