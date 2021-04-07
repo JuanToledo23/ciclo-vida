@@ -1,0 +1,31 @@
+<div style="max-width: 341px; padding: 21px 0px; width: 330px;">
+    <div style="padding: 0px 24px; margin-bottom: 21px;">
+        <div class="dialog-titulo u-flex-center u-txt-medium u-fz-18">Selecciona una fecha</div>
+    </div>
+    <hr>
+    <!-- <div class="row" style="padding: 0px 24px; margin-bottom: 21px;">
+        <div class="col-6" *ngFor="let territorio of territorios">
+            <div class="u-flex u-fz-13" style="margin-top: 31.82px;">
+                <div class="territorios">
+                    <input type="checkbox" name="grupo1" id="checkbox{{territorio.id}}" (change)="seleccionTerritorio(territorio)" [(ngModel)]="territorio.estatus"/>
+                    <label for="checkbox{{territorio.id}}"></label>
+                </div>
+                <div class="u-flex-column" style="margin-left: 7.5px;">
+                    <label for="checkbox{{territorio.id}}" class="u-txt-medium">{{territorio.nombre}}</label>
+                    <label for="checkbox{{territorio.id}}" class="u-txt-demibold u-txt-gris">{{territorio.piezas}} pzas.</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="datepicker">
+        <!-- <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader" [opened]="true"></mat-datepicker> -->
+        <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+    </div>
+    <hr>
+    <div class="u-flex u-justify-arround u-mt-1 u-fz-13" style="padding: 0px 24px;">
+        <div class="u-cursor-p u-txt-demibold u-txt-rojo" mat-dialog-close>Cancelar</div>
+        <div class="u-cursor-p u-txt-demibold u-txt-azul" [mat-dialog-close]="true">Continuar</div>
+    </div>
+</div>

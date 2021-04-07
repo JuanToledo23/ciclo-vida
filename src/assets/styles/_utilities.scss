@@ -509,6 +509,16 @@ strong {
     left: -17px;
     top: 3px;
 }
+.u-circulo-notificacion2 {
+    width: 7px;
+    height: 7px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #CC3333;
+    left: -13px;
+    top: 5px;
+}
 
 .u-promo {
     border: solid #CC3333 1.5px;
@@ -695,4 +705,23 @@ hr {
     height: 1em;
     margin-top: 0.2em;
     background: white;
+}
+
+.u-borde-amarillo {
+    border: solid 1px #FFCC00;
+    border-radius: 4px;
+}
+.u-borde-gris {
+    border: solid 1px #999999;
+    border-radius: 4px;
+}
+
+.u-border-bottom-u {
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+.u-border-top-u {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    border-top: unset;
 }

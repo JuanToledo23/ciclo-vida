@@ -23,6 +23,14 @@ import { InventarioRiesgoComponent } from './components/inventario-riesgo/invent
 import { MatrizInventarioRiesgoComponent } from './components/matriz-inventario-riesgo/matriz-inventario-riesgo.component';
 import { AlertasComponent } from './components/alertas/alertas.component';
 import { MasComponent } from './components/mas/mas.component';
+import { VisualizaAccionesComponent } from './components/visualiza-acciones/visualiza-acciones.component';
+import { AccionSolicitadaComponent } from './components/accion-solicitada/accion-solicitada.component';
+import { AccionesCedisComponent } from './components/acciones-cedis/acciones-cedis.component';
+import { DevolucionProveedorComponent } from './components/acciones-cedis/acciones/devolucion-proveedor/devolucion-proveedor.component';
+import { VentaLoteComponent } from './components/acciones-cedis/acciones/venta-lote/venta-lote.component';
+import { DonacionComponent } from './components/acciones-cedis/acciones/donacion/donacion.component';
+import { EnvioDestruccionComponent } from './components/acciones-cedis/acciones/envio-destruccion/envio-destruccion.component';
+import { DatepickerDialog } from './shared/dialogs/datepicker/datepicker.dialog';
 
 @NgModule({
   declarations: [
@@ -33,11 +41,19 @@ import { MasComponent } from './components/mas/mas.component';
     InventarioDetalleComponent,
     AccionesTiendaComponent,
     FormularioDialog,
+    DatepickerDialog,
     ComboDescuentoComponent,
     InventarioRiesgoComponent,
     MatrizInventarioRiesgoComponent,
     AlertasComponent,
-    MasComponent
+    MasComponent,
+    VisualizaAccionesComponent,
+    AccionSolicitadaComponent,
+    AccionesCedisComponent,
+    DevolucionProveedorComponent,
+    VentaLoteComponent,
+    DonacionComponent,
+    EnvioDestruccionComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,10 +68,14 @@ import { MasComponent } from './components/mas/mas.component';
       echarts,
     }),
   ],
+  exports: [
+    MaterialModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    FormularioDialog
+    FormularioDialog,
+    DatepickerDialog,
   ]
 })
 export class AppModule { }
