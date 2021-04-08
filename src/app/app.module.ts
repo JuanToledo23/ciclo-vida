@@ -30,7 +30,10 @@ import { DevolucionProveedorComponent } from './components/acciones-cedis/accion
 import { VentaLoteComponent } from './components/acciones-cedis/acciones/venta-lote/venta-lote.component';
 import { DonacionComponent } from './components/acciones-cedis/acciones/donacion/donacion.component';
 import { EnvioDestruccionComponent } from './components/acciones-cedis/acciones/envio-destruccion/envio-destruccion.component';
-import { DatepickerDialog } from './shared/dialogs/datepicker/datepicker.dialog';
+import { DatepickerDialog, NombreMesPipe } from './shared/dialogs/datepicker/datepicker.dialog';
+import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
+import { DateAdapter } from '@angular/material/core';
+import { CustomDateAdapter } from './shared/dialogs/datepicker/custom-date-adapter';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import { DatepickerDialog } from './shared/dialogs/datepicker/datepicker.dialog'
     VentaLoteComponent,
     DonacionComponent,
     EnvioDestruccionComponent,
+    NombreMesPipe
   ],
   imports: [
     BrowserModule,
@@ -67,11 +71,14 @@ import { DatepickerDialog } from './shared/dialogs/datepicker/datepicker.dialog'
     NgxEchartsModule.forRoot({
       echarts,
     }),
+    SatDatepickerModule, SatNativeDateModule,
   ],
   exports: [
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: CustomDateAdapter },
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     FormularioDialog,

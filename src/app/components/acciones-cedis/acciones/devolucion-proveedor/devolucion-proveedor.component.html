@@ -21,11 +21,13 @@
         </div>
         <div class="col-12" style="margin-top: 24.67px;">
             <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona una fecha para recolección</div>
-            <button (click)="abrirDialog()">Abrir</button>
+            <div class="u-cursor-p" (click)="abrirDialog()">
+                <input type="text" class="u-input-read" [(ngModel)]="_InventarioService.fechaSeleccionada">
+            </div>
         </div>
     </div>
 </div>
 
 <div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;">
-    <button mat-flat-button color="primary" style="width: 120px; height: 40px;" class="btn">Continuar</button>
+    <button mat-flat-button color="primary" style="width: 120px; height: 40px;" class="btn" (click) = "continuar()">Continuar</button>
 </div>

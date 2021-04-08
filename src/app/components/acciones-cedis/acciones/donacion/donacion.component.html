@@ -1,1 +1,33 @@
-<p>donacion works!</p>
+<div class="u-pad-2 u-scroll-y" style="height: 406px;">
+    <div class="u-fz-13 u-txt-demibold">
+        Configura la acción, previsualizala y solicita su autorización para los 5,000 colchones <strong class="u-txt-amarillo">Set Restonic Queen Size Grey.</strong>
+    </div>
+    <div class="row" style="margin-top: 16.87px;">
+        <div class="col-12">
+            <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona un proveedor</div>
+            <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;">
+                <mat-option value="opt1">Opción 1</mat-option>
+                <mat-option value="opt2">Opción 2</mat-option>
+                <mat-option value="opt3">Opción 3</mat-option>
+            </mat-select>
+        </div>
+        <div class="col-12" style="margin-top: 24.67px;">
+            <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Número de piezas para devolución?</div>
+            <input type="text">
+        </div>
+        <div class="col-12" style="margin-top: 24.67px;">
+            <div class="u-fz-15 strong" style="margin-bottom: 9px;">¿Cuántos m<sup>3</sup> son?</div>
+            <input type="text">
+        </div>
+        <div class="col-12" style="margin-top: 24.67px;">
+            <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona una fecha para recolección</div>
+            <div class="u-cursor-p" (click)="abrirDialog()">
+                <input type="text" class="u-input-read" [(ngModel)]="_InventarioService.fechaSeleccionada">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;">
+    <button mat-flat-button color="primary" style="width: 120px; height: 40px;" class="btn" (click) = "continuar()">Continuar</button>
+</div>

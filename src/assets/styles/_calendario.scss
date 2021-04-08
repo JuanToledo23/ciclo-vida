@@ -1,0 +1,44 @@
+.mat-calendar-table tbody > tr[aria-hidden="true"] {
+    display: none !important;
+}
+
+.mat-calendar-table-header th::before {
+    content: "";
+    border-left: 1px solid #E8E7E7;
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    height: 38px;
+}
+
+.mat-calendar-table-header-divider {
+    display: none !important;
+}
+
+.mat-calendar-controls button:first-of-type, .mat-calendar-controls div:first-of-type {
+    display: none;
+}
+
+.mat-calendar-controls {
+    justify-content: space-around;
+}
+
+.contenedorCalendario .mes {
+    position: absolute;
+    left: 148px;
+    top: 33px;
+}
+
+.mat-calendar-controls {
+    justify-content: space-between;
+}
+
+.mat-calendar-body-label {
+    color: #fff !important;
+}
+
+.mat-calendar-table-header, .mat-calendar-body {
+    font-size: 13px !important;
+    font-family: $font-demibold !important;
+    color: #333333 !important;
+}
