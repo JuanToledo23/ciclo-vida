@@ -11,7 +11,7 @@ export class AccionesCedisComponent implements OnInit {
   accion: string = '';
 
   constructor(public _HeaderFooterService: HeaderFooterService, private router: Router) {
-    this._HeaderFooterService.construirHeader('ico-menu', 'Más opciones', false, false, false);
+    this._HeaderFooterService.construirHeader('', 'Más opciones', true, false, false);
   }
 
   ngOnInit(): void {

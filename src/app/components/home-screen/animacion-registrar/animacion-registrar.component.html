@@ -1,0 +1,5 @@
+<div class="parent" [@slide]="activePane" style="width: 477px;height: 284px;overflow: hidden;">
+    <div><ng-content select="[leftPane]"></ng-content></div>
+    <div><ng-content select="[rightPane]"></ng-content></div>
+    <div><ng-content select="[topPane]"></ng-content></div>
+</div>

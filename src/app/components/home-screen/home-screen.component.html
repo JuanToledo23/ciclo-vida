@@ -1,0 +1,27 @@
+<div class="home-container" *ngIf="showSplashScreen">
+    <div lottie [options]="optionsCaminar" (animationCreated)="animationCreated($event)" class="lottie-svg"></div>
+    <div class="logoEKT">
+        <img src="assets/img/logos/logo_driver_big.svg" style="width: 140px;" alt="">
+    </div>
+</div>
+
+<div class="bloqueInicio" *ngIf="registerScreen">
+    <app-animacion-registrar [activePane]="isLeftVisible ? 'left' : 'right'" class="contenedorImgRight">
+        <div topPane class="iconoUbicacion">
+            <img src="assets/img/icons/iconoUbicacion.svg" alt="">
+        </div>
+        <div leftPane><img src="assets/img/icons/paisaje.svg" alt=""></div>
+        <div rightPane>
+            <div>
+                <img src="assets/img/icons/paisaje.svg" alt="">
+            </div>
+        </div>
+    </app-animacion-registrar>
+    <div class="main-container">
+        <div class="component-title">Bienvenido a <span class="titulo-rojo">EKT | <span class="u-txt-demibold">Driver</span></span></div>
+        <div class="component-subtitle">Entregando sueños a clientes.</div>
+        <div class="u-flex-center u-mt-2">
+            <button mat-flat-button color="primary" class="btn" [routerLink]="['/curp']" routerLinkActive="router-link-active" >Registro</button>
+        </div>
+    </div>
+</div>

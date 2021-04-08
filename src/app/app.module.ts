@@ -34,6 +34,13 @@ import { DatepickerDialog, NombreMesPipe } from './shared/dialogs/datepicker/dat
 import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
 import { DateAdapter } from '@angular/material/core';
 import { CustomDateAdapter } from './shared/dialogs/datepicker/custom-date-adapter';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+import { HomeScreenComponent } from './components/home-screen/home-screen.component';
+import { AnimacionRegistrar } from './components/home-screen/animacion-registrar/animacion-registrar.component';
+export function playerFactory(){
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -57,7 +64,9 @@ import { CustomDateAdapter } from './shared/dialogs/datepicker/custom-date-adapt
     VentaLoteComponent,
     DonacionComponent,
     EnvioDestruccionComponent,
-    NombreMesPipe
+    NombreMesPipe,
+    HomeScreenComponent,
+    AnimacionRegistrar
   ],
   imports: [
     BrowserModule,
@@ -72,6 +81,10 @@ import { CustomDateAdapter } from './shared/dialogs/datepicker/custom-date-adapt
       echarts,
     }),
     SatDatepickerModule, SatNativeDateModule,
+    LottieModule.forRoot({ 
+      player: playerFactory,
+      useCache: true
+    }),
   ],
   exports: [
     MaterialModule
