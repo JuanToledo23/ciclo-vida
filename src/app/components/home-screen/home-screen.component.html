@@ -1,27 +1,63 @@
 <div class="home-container" *ngIf="showSplashScreen">
     <div lottie [options]="optionsCaminar" (animationCreated)="animationCreated($event)" class="lottie-svg"></div>
     <div class="logoEKT">
-        <img src="assets/img/logos/logo_driver_big.svg" style="width: 140px;" alt="">
+        <img src="assets/img/icons/logo_driver_big.svg" style="width: 140px;" alt="">
     </div>
 </div>
 
 <div class="bloqueInicio" *ngIf="registerScreen">
-    <app-animacion-registrar [activePane]="isLeftVisible ? 'left' : 'right'" class="contenedorImgRight">
-        <div topPane class="iconoUbicacion">
-            <img src="assets/img/icons/iconoUbicacion.svg" alt="">
+    <div class="contenedor-login fade-in-image" >
+        <div style="padding: 22px 31.98px;">
+            <div class="u-flex-center u-fz-18">
+                <span class="u-txt-rojo u-txt-medium">EKT |</span> <strong class="u-txt-rojo"> Inventario</strong>
+            </div>
+            <div class="u-flex-center u-txt-medium" style="font-size: 22px; margin-top: 8px;">
+                Bienvenido
+            </div>
+            <div class="row">
+                <div class="col-12" style="margin-top: 29px;">
+                    <div class="u-fz-17 u-txt-medium" style="margin-bottom: 3px;">Número de empleado</div>
+                    <div class="u-position-r">
+                        <input type="text" style="height: 40px !important;" [(ngModel)]="numEmpleado">
+                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!numEmpleado">Número de empleado incorrecto</div>
+                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="numEmpleado">
+                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!numEmpleado">
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 51px;">
+                    <div class="u-fz-17 u-txt-medium" style="margin-bottom: 3px;">Llave maestra</div>
+                    <div class="u-position-r">
+                        <input type="text" style="height: 40px !important;" [(ngModel)]="llave">
+                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!llave">Llave maestra incorrecta</div>
+                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="llave">
+                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!llave">
+                    </div>
+                </div>
+            </div>
+            <div class="u-flex-between" style="margin-top: 20px;">
+                <div class="u-flex">
+                    <img src="assets/img/icons/face.svg">
+                    <div class="u-txt-demibold u-fz-12" style="margin-left: 6px;">Utilizar Biométricos</div>
+                </div>
+                <div class="checkbox-green">
+                    <input type="checkbox" name="grupo1" id="checkbox1"/>
+                    <label for="checkbox1"></label>
+                </div>
+            </div>
+
+            <div class="u-flex-center" style="margin-top: 48px; margin-bottom: 20px;">
+                <button mat-flat-button color="primary" style="width: 153px; height: 40px; border-radius: 8px;" class="btn" [routerLink]="['/inventario']" routerLinkActive="router-link-active" >Iniciar sesión</button>
+            </div>
+
+
         </div>
-        <div leftPane><img src="assets/img/icons/paisaje.svg" alt=""></div>
+    </div>
+    <app-animacion-registrar [activePane]="isLeftVisible ? 'left' : 'right'" class="contenedorImgRight">
+        <div leftPane><img src="assets/img/fondo.svg" alt=""></div>
         <div rightPane>
             <div>
-                <img src="assets/img/icons/paisaje.svg" alt="">
+                <img src="assets/img/fondo.svg" alt="">
             </div>
         </div>
     </app-animacion-registrar>
-    <div class="main-container">
-        <div class="component-title">Bienvenido a <span class="titulo-rojo">EKT | <span class="u-txt-demibold">Driver</span></span></div>
-        <div class="component-subtitle">Entregando sueños a clientes.</div>
-        <div class="u-flex-center u-mt-2">
-            <button mat-flat-button color="primary" class="btn" [routerLink]="['/curp']" routerLinkActive="router-link-active" >Registro</button>
-        </div>
-    </div>
 </div>

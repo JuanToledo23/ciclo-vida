@@ -7,12 +7,12 @@ input[type="checkbox"] + label {
     background-size: 15px;
     cursor: pointer;
     display: inline-block;
-    background-image: url(./assets/img/icons/checkbox/check_unchecked.svg);
+    background-image: url(./assets/img/checkbox/check_unchecked.svg);
     background-position: 0px 7px;
     padding: 6px 30px 5px 22px;
 }
 input[type="checkbox"]:checked + label {
-    background-image: url(./assets/img/icons/checkbox/check_checked.svg);
+    background-image: url(./assets/img/checkbox/check_checked.svg);
 }
 
 input[type="checkbox"].alone + label {
@@ -28,16 +28,39 @@ input[type="checkbox"].alone + label {
     background-size: 26px;
     cursor: pointer;
     display: inline-block;
-    background-image: url(./assets/img/icons/checkbox/check_unchecked.svg);
+    background-image: url(./assets/img/checkbox/check_unchecked.svg);
     background-position: 0px 2px;
     padding: 0px 15px 6px 11px;
     height: 22px;
 }
 .territorios input[type="checkbox"]:checked + label {
-    background-image: url(./assets/img/icons/checkbox/check_checked.svg);
+    background-image: url(./assets/img/checkbox/check_checked.svg);
 }
 
 .territorios input[type="checkbox"].alone + label {
+    background-position: 0px 2px;
+    padding: 0px 13px 0px 0px;
+}
+
+
+.checkbox-green input[type="checkbox"] {
+    display: none;
+}
+.checkbox-green input[type="checkbox"] + label {
+    padding-left: 22px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url(./assets/img/checkbox/check_unchecked_green.svg);
+    background-position: 0px 7px;
+    padding: 20px 0px 4px 16px;
+}
+.checkbox-green input[type="checkbox"]:checked + label {
+    background-image: url(./assets/img/checkbox/check_checked_green.svg);
+}
+
+.checkbox-green nput[type="checkbox"].alone + label {
     background-position: 0px 2px;
     padding: 0px 13px 0px 0px;
 }

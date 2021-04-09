@@ -12,6 +12,7 @@ export class HeaderFooterService {
     regresar: boolean = false;
     buscador: boolean = false;
     mostrarFooter: boolean = true;
+    mostrarHeader: boolean = true;
 
     opcionesFooter = [
         { nombre: 'Inventario', img: 'ico-inventario-activo', rute: '', estatus: true },

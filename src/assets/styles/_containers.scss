@@ -76,3 +76,15 @@
     border-radius: 4px;
     padding: 24px 25px;
 }
+
+.contenedor-login {
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 4px;
+    width: 297px;
+    height: 458px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 67px;
+    left: 31px;
+    z-index: 2;
+}

@@ -9,6 +9,7 @@ import { VentaLoteComponent } from './components/acciones-cedis/acciones/venta-l
 import { AccionesTiendaComponent } from './components/acciones-tienda/acciones-tienda.component';
 import { AlertasComponent } from './components/alertas/alertas.component';
 import { ComboDescuentoComponent } from './components/combo-descuento/combo-descuento.component';
+import { HomeScreenComponent } from './components/home-screen/home-screen.component';
 import { InventarioDetalleComponent } from './components/inventario-detalle/inventario-detalle.component';
 import { InventarioRiesgoComponent } from './components/inventario-riesgo/inventario-riesgo.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
@@ -17,7 +18,8 @@ import { MatrizInventarioRiesgoComponent } from './components/matriz-inventario-
 import { VisualizaAccionesComponent } from './components/visualiza-acciones/visualiza-acciones.component';
 
 const routes: Routes = [
-  { path: '', component: InventarioComponent },
+  { path: '', component: HomeScreenComponent },
+  { path: 'inventario', component: InventarioComponent },
   { path: 'detalle/:id', component: InventarioDetalleComponent },
   { path: 'acciones-tienda', component: AccionesTiendaComponent },
   { path: 'acciones-tienda/:id', component: AccionesTiendaComponent },
@@ -33,6 +35,7 @@ const routes: Routes = [
   { path: 'acciones-cedir/donacion', component: DonacionComponent },
   { path: 'acciones-cedir/envio-destruccion', component: EnvioDestruccionComponent },
   { path: 'acciones-cedir/venta-lote', component: VentaLoteComponent },
+  { path: 'home', component: HomeScreenComponent },
 ];
 
 @NgModule({

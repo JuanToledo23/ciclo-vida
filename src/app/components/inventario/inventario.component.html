@@ -14,10 +14,13 @@
 </div>
 <div class="u-scroll-y">
     <div class="u-flex-between u-pad-1 u-border-bottom" *ngFor="let producto of inventario" [routerLink]="['/detalle', producto.id]" routerLinkActive="router-link-active" >
-        <div class="u-flex">
-            <div class="u-circulo">
+        <div class="u-flex u-position-r">
+            <div class="u-circulo u-flex-center" style="overflow: hidden;" [ngClass]="{'borde-rojo': producto.descuento}">
                 <img [src]="producto.img" class="u-img-fluid">
+                <mat-icon svgIcon="ico-promo" class="u-position-a" style="width: 20px;height: 20px;left: 31px;top: 156px;z-index: 3;" *ngIf="producto.descuento"></mat-icon>
+                <label class="u-position-a u-txt-blanco strong" style="left: 33px;top: 161px;font-size: 8px;z-index: 4;" *ngIf="producto.descuento">{{producto.descuento}}%</label>
             </div>
+
             <div class="u-flex-column" style="margin-left: 25.72px; width: 180px;">
                 <div class="u-fz-17 u-txt-medium">{{producto.nombre}}</div>
                 <div class="u-fz-15">SKU: {{producto.sku}}</div>

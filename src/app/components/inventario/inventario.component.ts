@@ -13,6 +13,7 @@ export class InventarioComponent implements OnInit {
   constructor(public _InventarioService: InventarioService, public _HeaderFooterService: HeaderFooterService) {
     this.inventario = this._InventarioService.getInventario();
     this._HeaderFooterService.construirHeader('ico-inventario-activo', 'Inventario', false, true, true, 'Hogar');
+    this._HeaderFooterService.mostrarHeader = true;
   }
 
   ngOnInit(): void {

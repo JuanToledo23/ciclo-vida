@@ -15,7 +15,7 @@ import {
         trigger('slide', [
             // ...
             state('left', style({
-                transform: 'translateX(-42%)'
+                transform: 'translateX(-10%)'
             })),
             state('right', style({
                 transform: 'translateX(70%)'
