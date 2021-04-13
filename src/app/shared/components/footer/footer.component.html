@@ -3,6 +3,6 @@
         <button mat-icon-button aria-label="Regresar" style="margin-bottom: -13px;" (click)="cambioOpcion(item)" [routerLink]="[item.rute]" routerLinkActive="router-link-active" >
             <mat-icon [svgIcon]="item.img" class="u-icon-md u-ico-gris" [ngClass]="{'u-ico-amarillo': item.estatus}"></mat-icon>
         </button>
-        <div class="u-fz-10" [ngClass]="{'strong': item.estatus}">{{item.nombre}}</div>
+        <div class="u-fz-10" [ngClass]="{'strong u-txt-amarillo': item.estatus}">{{item.nombre}}</div>
     </div>
 </mat-toolbar>

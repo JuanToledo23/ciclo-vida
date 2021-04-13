@@ -8,8 +8,8 @@
 }
 
 .u-icon-md {
-    height: 21px !important;
-    width: 21px !important;
+    height: 23px !important;
+    width: 23px !important;
 }
 
 .u-icon-xxl {
@@ -541,7 +541,7 @@ strong {
 }
 
 .u-scroll-y {
-    height: 450px;
+    height: 494px;
     overflow-y: auto;
 }
 
@@ -727,5 +727,14 @@ hr {
 }
 
 .borde-rojo {
-    border: solid 1.5px #CC3333;
+    border: solid 2px #CC3333;
+}
+
+.carousel-cell {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-cell img {
+    width: 160px !important;
 }

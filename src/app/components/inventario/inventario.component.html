@@ -1,5 +1,5 @@
 <div class="contenedor-filtros u-flex-between u-pad-1 u-border-bottom">
-    <div class="u-fz-17 u-txt-demibold">Total de artículos: <strong>250</strong></div>
+    <div class="u-fz-17 u-txt-medium">Total de artículos: <strong>250</strong></div>
     <div>
         <mat-select class="u-txt-demibold" style="width: 133px;">
             <mat-option value="opt1">Opción 1</mat-option>
@@ -38,5 +38,45 @@
                 <mat-icon svgIcon="ico-flecha" class="u-icon-sm" style="margin-left: 22px;"></mat-icon>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="btn-filtro" *ngIf="!mostrarFiltros">
+    <button mat-mini-fab aria-label="Filtros" (click)="mostrarFiltros = !mostrarFiltros">
+        <mat-icon>filter_list</mat-icon>
+    </button>
+</div>
+
+<div class="overlay" *ngIf="mostrarFiltros">
+    <div class="contenedor-filtros-boton">
+        <div class="contenedor-encabezado-filtros">
+            <ng-container *ngFor="let encabezado of encabezados">
+                <div [ngClass]="{'btn-filtros-activo': encabezado.estatus}" class="border-left-filtro" (click)="seleccionEncabezado(encabezado)">{{encabezado.titulo}}</div>
+            </ng-container>
+        </div>
+        <div style="padding: 18.11px 12px;">
+            <div class="contenedor-contenido-filtros u-ft-13">
+                <ng-container *ngIf="encabezados[0].estatus">
+                    <ng-container *ngFor="let boton of botonesEstatus">
+                        <button mat-flat-button class="btn btn-gris btn-filtro-inventario" style="margin-left: 9px;" [ngStyle]="{'padding': boton.padding}" [ngClass]="{'btn-filtros-activo': boton.estatus}" (click)="seleccionEstatus(boton)">{{boton.titulo}}</button>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngIf="encabezados[1].estatus">
+                    <ng-container *ngFor="let boton of botonesRotacion">
+                        <button mat-flat-button class="btn btn-gris btn-filtro-inventario" style="margin-left: 9px;" [ngStyle]="{'padding': boton.padding}" [ngClass]="{'btn-filtros-activo': boton.estatus}" (click)="seleccionRotacion(boton)">{{boton.titulo}}</button>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngIf="encabezados[2].estatus">
+                    <ng-container *ngFor="let boton of botonesDescuento">
+                        <button mat-flat-button class="btn btn-gris btn-filtro-inventario" style="margin-left: 9px;" [ngStyle]="{'padding': boton.padding}" [ngClass]="{'btn-filtros-activo': boton.estatus}" (click)="seleccionRotacion(boton)">{{boton.titulo}}</button>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="btn-filtro">
+        <button mat-mini-fab aria-label="Filtros" (click)="mostrarFiltros = !mostrarFiltros">
+            <mat-icon svgIcon="ico-cerrar" style="width: 19px;height: 19px;"></mat-icon>
+        </button>
     </div>
 </div>

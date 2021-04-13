@@ -42,7 +42,7 @@ export class MatrizInventarioRiesgoComponent implements OnInit {
 
 
   constructor(public _HeaderFooterService: HeaderFooterService) {
-    this._HeaderFooterService.construirHeader('', 'Inventario', true, false, true);
+    this._HeaderFooterService.construirHeader('', 'Matriz de inventario en riesgo', true, false, true);
   }
 
   ngOnInit(): void {

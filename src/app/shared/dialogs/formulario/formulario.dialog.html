@@ -5,7 +5,7 @@
     <hr>
     <div class="row" style="padding: 0px 24px; margin-bottom: 21px;">
         <div class="col-6" *ngFor="let territorio of territorios">
-            <div class="u-flex u-fz-13" style="margin-top: 31.82px;">
+            <div class="u-flex u-fz-13" style="margin-top: 34px;">
                 <div class="territorios">
                     <input type="checkbox" name="grupo1" id="checkbox{{territorio.id}}" (change)="seleccionTerritorio(territorio)" [(ngModel)]="territorio.estatus"/>
                     <label for="checkbox{{territorio.id}}"></label>
@@ -121,5 +121,26 @@
         <div style="width: 167px;">{{item.nombre}}</div>
         <div style="width: 31.98px; margin-left: 12px;">{{item.piezas}}</div>
         <div style="width: 29.98px; margin-left: 41px;">{{item.costo}}</div>
+    </div>
+</div>
+
+<div style="max-width: 341px; padding: 21px 24.7px;background-color: #fecc00;" *ngIf="data.tipo === 5">
+    <strong class="u-fz-14">¡Juan!</strong>
+    <div class="u-fz-16">
+        Tienes <strong>5,000 Colchones <br> Set restonic</strong>
+    </div>
+    <div class="u-flex-between u-fz-16">
+        <div class="u-txt-rojo strong">
+            en 100 tiendas con <br>
+            más de 2 años sin <br>
+            venta.
+        </div>
+        <div style="margin-left: 25px;">
+            <img src="assets/img/icons/conlchon_flechas.svg">
+        </div>
+    </div>
+    <div class="u-flex-between u-mt-2 u-fz-13">
+        <button mat-flat-button class="btn btn-transparente u-mr-1" mat-dialog-close>Entiendo</button>
+        <button mat-flat-button class="btn btn-rojo" [mat-dialog-close]="true" [routerLink]="['/acciones-tienda']" routerLinkActive="router-link-active" >Acciones</button>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="home-container" *ngIf="showSplashScreen">
     <div lottie [options]="optionsCaminar" (animationCreated)="animationCreated($event)" class="lottie-svg"></div>
-    <div class="logoEKT">
-        <img src="assets/img/icons/logo_driver_big.svg" style="width: 140px;" alt="">
+    <div class="u-flex-center logoEKT u-position-a u-txt-rojo" style="font-size: 35px; font-size: 35px;top: 44%;left: 18%;">
+        <span class="u-txt-medium" style="margin-top: 8px;margin-right: 9px;">EKT </span> | <strong style="margin-left: 8px;"> Inventario</strong>
     </div>
 </div>
 
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="u-flex-center" style="margin-top: 48px; margin-bottom: 20px;">
+            <div class="u-flex-center" style="margin-top: 28px; margin-bottom: 20px;">
                 <button mat-flat-button color="primary" style="width: 153px; height: 40px; border-radius: 8px;" class="btn" [routerLink]="['/inventario']" routerLinkActive="router-link-active" >Iniciar sesión</button>
             </div>
 

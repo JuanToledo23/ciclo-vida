@@ -7,7 +7,7 @@
 
 .header-toolbar {
     background-color: $white-color;
-    height: 80px !important;
+    height: 60px !important;
     position: sticky;
     top: 0;
     z-index: 99;
@@ -18,7 +18,7 @@
 .footer-toolbar {
     background-color: $white-color;
     box-shadow: 3px 6px 7px 5px #00000029;
-    height: 80px !important;
+    // height: 80px !important;
     position: sticky;
     bottom: 0;
     z-index: 99;
@@ -27,7 +27,7 @@
 
 .contenedor-filtros {
     background-color: $white-color;
-    height: 80px !important;
+    // height: 80px !important;
     position: sticky;
     z-index: 2;
 }

@@ -28,13 +28,13 @@ input[type="checkbox"].alone + label {
     background-size: 26px;
     cursor: pointer;
     display: inline-block;
-    background-image: url(./assets/img/checkbox/check_unchecked.svg);
+    background-image: url(./assets/img/checkbox/check_unchecked_green.svg);
     background-position: 0px 2px;
     padding: 0px 15px 6px 11px;
     height: 22px;
 }
 .territorios input[type="checkbox"]:checked + label {
-    background-image: url(./assets/img/checkbox/check_checked.svg);
+    background-image: url(./assets/img/checkbox/check_checked_green.svg);
 }
 
 .territorios input[type="checkbox"].alone + label {

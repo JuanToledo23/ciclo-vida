@@ -1,0 +1,77 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: rgba(0, 0, 0, 0.32);
+}
+
+.btn-filtro {
+    z-index: 999;
+    position: absolute;
+    bottom: 65px;
+    right: 13px;
+}
+
+.btn-filtro button {
+    background-color: #FFCC00 !important;
+}
+
+.contenedor-filtros-boton {
+    width: 327px;
+    height: 110.76px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 84px;
+    left: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contenedor-encabezado-filtros {
+    display: flex;
+    box-shadow: 0px 1px 2px #00000029;
+}
+.contenedor-encabezado-filtros div {
+    height: 34px;
+    width: 109px;
+    font-family: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'AvenirNextLTPro-Medium';
+}
+
+.btn-filtros-activo {
+    background-color: #FFCC00;
+    color: #FFFFFF;
+    font-family: 'Avenir_Next_Bold';
+}
+
+.contenedor-contenido-filtros {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.btn-filtro-inventario {
+    line-height: 30px !important;
+    min-width: unset !important;
+}
+
+.btn-filtro-inventario:first-of-type {
+    margin-left: unset !important;
+}
+
+.border-left-filtro {
+    border-left: solid 1px #E5E5E5;
+}
+.border-left-filtro:first-of-type {
+    border-left: unset !important;
+}

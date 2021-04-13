@@ -36,23 +36,23 @@ export class AccionesTiendaComponent implements OnInit {
     {id: 0, texto: ''},
   ];
 
-  constructor(public dialog: MatDialog, public _TerritoriosService: TerritoriosService, public _HeaderFooterService: HeaderFooterService, private router: Router, private route: ActivatedRoute, public _InventarioService: InventarioService) {
+  constructor(public dialog: MatDialog, public _TerritoriosService: TerritoriosService, public _HeaderFooterService: HeaderFooterService, 
+    private router: Router, private route: ActivatedRoute, public _InventarioService: InventarioService) {
     this._HeaderFooterService.construirHeader('', 'Acciones en tienda', true, false, false);
-
-    
     this.inventario = this._InventarioService.getInventario();
-
     const routeParams = this.route.snapshot.paramMap;
     const idFromRoute = Number(routeParams.get('id'));
-    this.articuloMostrado = this.inventario.find((video: { id: number; }) => video.id === idFromRoute);
-    if(this.articuloMostrado) {
+    this.articuloMostrado = this.inventario.find((articulo: { id: number; }) => articulo.id === idFromRoute);
+    if(routeParams.get('id')) {
       this.accion = 'opt1';
       this.canal = 'opt1';
       this.descuento = 'opt1';
       this.territoriosSeleccionados = 'Bajío, Pacifico Sur';
       this.cambioAccion();
       this.continueButton = true;
+      this.validarFormulario();
     }
+    this.validarFormulario();
   }
 
   ngOnInit(): void {
@@ -143,7 +143,7 @@ export class AccionesTiendaComponent implements OnInit {
   }
 
   validarFormulario() {
-    if(this.accion !== '' || this.canal !== '' || this.descuento !== '', this.territoriosSeleccionados !== '') {
+    if(this.accion === '' || this.canal === '' || this.descuento === '', this.territoriosSeleccionados === '') {
       this.continueButton = false;
     } else {
       this.continueButton = true;
@@ -159,9 +159,11 @@ export class AccionesTiendaComponent implements OnInit {
     });
   }
   validarFormulario3() {
+    console.log(this.articulosLigar2);
+    console.log(this.territoriosSeleccionados2);
     this.continueButton3 = true;
     this.articulosLigar2.forEach(element => {
-      if(!element.texto) {
+      if(element.texto === '' || this.territoriosSeleccionados2 === '') {
         this.continueButton3 = false;
       }
     });

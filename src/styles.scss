@@ -11,6 +11,7 @@
 @import "assets/styles/acordion";
 @import "assets/styles/calendario";
 @import "assets/styles/home";
+@import "assets/styles/filtros";
 
 * {
     margin: 0px;
@@ -32,4 +33,12 @@ body {
 
 .cdk-overlay-pane {
     max-width: unset !important;
+}
+
+.mat-button-focus-overlay {
+    background-color: transparent !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: transparent !important;
 }

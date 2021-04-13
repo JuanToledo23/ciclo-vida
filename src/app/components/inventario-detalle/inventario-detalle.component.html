@@ -33,7 +33,7 @@
 
     <div class="u-flex-column" style="margin-top: 28px;">
         <div class="u-fz-17 u-txt-demibold">{{articuloMostrado.nombre}}</div>
-        <div class="u-flex-between">
+        <div class="u-flex-between u-txt-medium">
             <div class="u-fz-15">SKU: {{articuloMostrado.sku}}</div>
             <div class="u-fz-13">{{articuloMostrado.tiendas}} tiendas</div>
         </div>
@@ -42,7 +42,7 @@
             'u-nuevo': articuloMostrado.estado === 'Nuevo'}">
                 {{articuloMostrado.estado}}
         </strong>
-        <div class="u-fz-15">{{articuloMostrado.piezas}} pzas.</div>
+        <div class="u-fz-15 strong">{{articuloMostrado.piezas}} pzas.</div>
     </div>
     <div class="u-flex-center-y" style="margin: 18px 0px;">
         <div class="u-flex-center-y u-cursor-p" (click)="descuentoProceso(articuloMostrado)">
@@ -108,6 +108,12 @@
                         <div class="u-txt-center conDano">0</div>
                         <div class="u-txt-right costo">$3,874,871</div>
                     </div>
+                </div>
+                <div class="u-txt-center u-fz-13" style="margin-top: 8.56px;">
+                    Última compra: <strong> 3 Mayo 2019 - </strong> <strong class="u-txt-rojo"> hace 18 meses</strong>
+                </div>
+                <div class="u-txt-center u-fz-13" style="margin-top: 2.87px;">
+                    Última compra: <strong> 10 Mayo 2019 - </strong> <strong class="u-txt-rojo"> hace 12 meses</strong>
                 </div>
             </mat-expansion-panel>
         </mat-accordion>

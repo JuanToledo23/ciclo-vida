@@ -14,7 +14,6 @@ export class FormularioDialog implements OnInit {
   tiendas: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public _TerritoriosService: TerritoriosService, public _InventarioService: InventarioService) {
-    console.log(this.data);
     this.territorios = this._TerritoriosService.getTerritorios();
     this.tiendas = this._InventarioService.getTiendas();
   }

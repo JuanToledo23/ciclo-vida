@@ -88,5 +88,9 @@ export class MaterialModule {
       "ico-close",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/close.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "ico-cerrar",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/img/icons/icono-cerrar.svg")
+    );
   }
 }
