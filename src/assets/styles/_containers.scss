@@ -1,15 +1,16 @@
 .app-wrapper {
-    max-width: 360px;
+    // max-width: 360px;
     margin: 0 auto;
     overflow: hidden;
-    max-height: 640px;
+    // max-height: 640px;
 }
 
 .header-toolbar {
     background-color: $white-color;
     height: 60px !important;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 99;
     padding: 19px 22px 16px 22px !important;
     box-shadow: 0px 2px 3px #00000029;
@@ -19,16 +20,20 @@
     background-color: $white-color;
     box-shadow: 3px 6px 7px 5px #00000029;
     // height: 80px !important;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     z-index: 99;
-    padding: 19px 22px 16px 22px !important;
+    // padding: 19px 22px 16px 22px !important;
 }
 
 .contenedor-filtros {
     background-color: $white-color;
     // height: 80px !important;
-    position: sticky;
+    z-index: 2;
+}
+.contenedor-titulos {
+    background-color: $white-color;
+    // height: 80px !important;
     z-index: 2;
 }
 
@@ -87,4 +92,10 @@
     top: 67px;
     left: 31px;
     z-index: 2;
+}
+
+.u-contenedor-fijo {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
 }

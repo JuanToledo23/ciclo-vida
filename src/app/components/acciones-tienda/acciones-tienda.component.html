@@ -1,4 +1,4 @@
-<div class="u-pad-2 u-scroll-y">
+<div class="u-pad-2 u-scroll-y margin-top margin-bottom" style="margin-bottom: 87px;">
     <div class="u-fz-13 u-txt-demibold">Configura la acción, previsualizala y solicita su autorización para los 5,000 colchones <strong class="u-txt-amarillo">Set Restonic Queen Size Grey.</strong></div>
     <div class="row" style="margin-top: 16.87px;">
         <div class="col-12">
@@ -76,13 +76,13 @@
 
 
 
-<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;" *ngIf="opt1">
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: fixed;" *ngIf="opt1">
     <button mat-flat-button color="primary" class="btn" style="width: 120px;" [ngClass]="{'desac-button': !continueButton}" (click)="previsualizar()">Previsualizar</button>
 </div>
 
-<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;" *ngIf="opt2">
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: fixed;" *ngIf="opt2">
     <button mat-flat-button color="primary" class="btn" style="width: 120px;" [ngClass]="{'desac-button': !continueButton2}" [routerLink]="['/combo-descuento']" routerLinkActive="router-link-active" >Continuar</button>
 </div>
-<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;" *ngIf="opt3">
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: fixed;" *ngIf="opt3">
     <button mat-flat-button color="primary" class="btn" style="width: 120px;" [ngClass]="{'desac-button': !continueButton3}" (click)="previsualizar2()">Previsualizar</button>
 </div>

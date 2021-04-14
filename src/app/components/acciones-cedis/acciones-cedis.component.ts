@@ -24,10 +24,10 @@ export class AccionesCedisComponent implements OnInit {
         this.router.navigate(['/acciones-cedir/devolucion-proveedor']);
         break;
       case 'opt2':
-        this.router.navigate(['/acciones-cedir/donacion']);
+        this.router.navigate(['/acciones-cedir/venta-lote']);
         break;
       case 'opt3':
-        this.router.navigate(['/acciones-cedir/venta-lote']);
+        this.router.navigate(['/acciones-cedir/donacion']);
         break;
       case 'opt4':
         this.router.navigate(['/acciones-cedir/envio-destruccion']);

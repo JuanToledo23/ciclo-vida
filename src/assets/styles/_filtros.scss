@@ -1,5 +1,5 @@
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -13,7 +13,7 @@
 
 .btn-filtro {
     z-index: 999;
-    position: absolute;
+    position: fixed;
     bottom: 65px;
     right: 13px;
 }
@@ -23,12 +23,12 @@
 }
 
 .contenedor-filtros-boton {
-    width: 327px;
+    width: 92%;
     height: 110.76px;
     background-color: #FFFFFF;
-    position: absolute;
+    position: fixed;
     bottom: 84px;
-    left: 20px;
+    right: 13px;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -58,6 +58,11 @@
     overflow: auto;
     display: flex;
     box-sizing: border-box;
+}
+
+.contenedor-contenido-filtros::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
 }
 
 .btn-filtro-inventario {

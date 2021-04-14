@@ -541,8 +541,16 @@ strong {
 }
 
 .u-scroll-y {
-    height: 494px;
+    // height: 494px;
     overflow-y: auto;
+}
+
+.margin-top {
+    margin-top: 60px;
+}
+
+.margin-bottom {
+    margin-bottom: 56px;
 }
 
 .u-txt-amarillo {
@@ -736,5 +744,13 @@ hr {
 }
 
 .carousel-cell img {
-    width: 160px !important;
+    width: 210px !important;
+}
+.contentBorderGris > div {
+    padding: 3px 8px;
+    box-sizing: border-box;
+}
+.contentBorderGris > div:nth-of-type(2) {
+    border-left: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;
 }

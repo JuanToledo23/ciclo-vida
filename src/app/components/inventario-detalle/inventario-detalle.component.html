@@ -1,4 +1,4 @@
-<div class="u-pad-1 u-scroll-y">
+<div class="u-pad-1 u-scroll-y margin-top margin-bottom margin-bottom">
     <div class="u-flex-end">
         <button mat-icon-button aria-label="Regresar" style="z-index: 2;" [matMenuTriggerFor]="menu">
             <mat-icon svgIcon="ico-puntos" class="u-icon-md"></mat-icon>
@@ -50,23 +50,23 @@
             <mat-icon svgIcon="ico-editar" style="width: 15px; height: 15px; margin-left: 6px;"></mat-icon>
         </div>
     </div>
-    <div class="u-flex-between">
-        <div class="u-flex-column u-align-center" style="padding: 0px 13px 0px 0px;">
+    <div class="u-flex-between contentBorderGris">
+        <div class="u-flex-column u-align-center u-txt-center" style="width: 27%;">
             <div class="u-fz-13 u-txt-medium">Costo</div>
             <div class="u-fz-12 u-txt-medium">&nbsp;</div>
             <div class="u-fz-17 strong">$3,773</div>
         </div>
-        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;" *ngIf="!precios" (click)="precios = !precios">
+        <div class="u-flex-column u-align-center  u-txt-center" style="width: 37%;" *ngIf="!precios" (click)="precios = !precios">
             <div class="u-fz-13 u-txt-medium">Precio de venta</div>
             <div class="u-fz-12 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
             <div class="u-fz-17 strong">$4,074</div>
         </div>
-        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 13px;" *ngIf="precios" (click)="precios = !precios">
+        <div class="u-flex-column u-align-center  u-txt-center" style="width: 37%;" *ngIf="precios" (click)="precios = !precios">
             <div class="u-fz-13 u-txt-medium">Precio de crédito</div>
             <div class="u-fz-12 u-txt-medium u-txt-gris u-txt-through">$8,149</div>
             <div class="u-fz-17 strong">$3,020</div>
         </div>
-        <div class="u-flex-column u-align-center u-border-left" style="padding: 0px 0px 0px 13px;">
+        <div class="u-flex-column u-align-center  u-txt-center" style="width: 36%;">
             <div class="u-fz-13 u-txt-medium">Efectividad</div>
             <div class="u-fz-12 u-txt-medium u-txt-gris"><strong>80</strong> de 200 tiendas</div>
             <div class="u-fz-17 strong">40%</div>

@@ -159,7 +159,12 @@ newChartOption: any = {};
             id:   'MaxAxis',
             type: 'value',
             name: 'Venta',
-            axisLabel: { formatter: '{value}K' },
+            axisLabel: { 
+              formatter: function (value, index){
+                let aux = value/1000;
+                return aux + 'K';
+              }
+            },
             nameTextStyle: {
               padding: [5, 0, 15, 60]
             }

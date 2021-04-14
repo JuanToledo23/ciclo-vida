@@ -105,8 +105,8 @@
     </div>
 </div>
 
-<div style="max-width: 341px;" class="u-position-r u-scroll-y" *ngIf="data.tipo === 4">
-    <div class="u-position-a" style="top: -33px;right: 0;" mat-dialog-close>
+<div style="max-width: 341px;" class="u-scroll-y" *ngIf="data.tipo === 4">
+    <div class="u-position-a" style="top: 35px;right: 22px;" mat-dialog-close>
         <mat-icon svgIcon="ico-close" style="width: 20.34px;"></mat-icon>
     </div>
     <div style="padding: 21px 24px 46.19px 24px;position: sticky;top: 0px;" class="u-border-bottom u-bg-blanco">
@@ -114,8 +114,8 @@
     </div>
     <div style="padding: 2px 26.75px;position: sticky;top: 68.19px;" class="u-fz-13 u-txt-demibold u-border-bottom u-flex u-bg-blanco">
         <div>Tienda</div>
-        <div style="margin-left: 135.36px;">Piezas</div>
-        <div style="margin-left: 26.13px;">Costo</div>
+        <div style="margin-left: 124.36px;">Piezas</div>
+        <div style="margin-left: 33.13px;">Costo</div>
     </div>
     <div style="padding: 21.3px 16px;" class="u-border-bottom u-flex u-fz-13 u-txt-medium" *ngFor="let item of tiendas">
         <div style="width: 167px;">{{item.nombre}}</div>
@@ -140,7 +140,7 @@
         </div>
     </div>
     <div class="u-flex-between u-mt-2 u-fz-13">
-        <button mat-flat-button class="btn btn-transparente u-mr-1" mat-dialog-close>Entiendo</button>
-        <button mat-flat-button class="btn btn-rojo" [mat-dialog-close]="true" [routerLink]="['/acciones-tienda']" routerLinkActive="router-link-active" >Acciones</button>
+        <button mat-flat-button class="btn btn-transparente u-mr-1" mat-dialog-close style="width: 121px;">Entendido</button>
+        <button mat-flat-button class="btn btn-rojo" [mat-dialog-close]="true" [routerLink]="['/acciones-tienda']" routerLinkActive="router-link-active" style="width: 121px;">Acciones</button>
     </div>
 </div>

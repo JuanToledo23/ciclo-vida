@@ -1,10 +1,10 @@
-<div class="u-pad-2 u-scroll-y" >
+<div class="u-pad-2 u-scroll-y margin-top margin-bottom" style="margin-bottom: 87px;">
     <div class="u-fz-13 u-txt-demibold">
         Configura la acción, previsualizala y solicita su autorización para los 5,000 colchones <strong class="u-txt-amarillo">Set Restonic Queen Size Grey.</strong>
     </div>
     <div class="row" style="margin-top: 16.87px;">
         <div class="col-12">
-            <div class="u-fz-15 strong" style="margin-bottom: 9px;">Selecciona una opción</div>
+            <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">Selecciona una opción</div>
             <mat-select class="u-txt-medium u-fz-13" style="padding: 7px 10px 4px 16px;" [(ngModel)]="accion">
                 <mat-option value="opt1">Devolución a proveedor</mat-option>
                 <mat-option value="opt2">Venta por lote</mat-option>
@@ -15,6 +15,6 @@
     </div>
 </div>
 
-<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: sticky;">
+<div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: fixed;">
     <button mat-flat-button color="primary" style="width: 120px; height: 40px;" [ngClass]="{'desac-button': !accion}" class="btn" (click)="continuar()">Continuar</button>
 </div>

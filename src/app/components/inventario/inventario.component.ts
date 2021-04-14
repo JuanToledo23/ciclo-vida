@@ -21,10 +21,10 @@ export class InventarioComponent implements OnInit {
   ];
 
   botonesEstatus = [
-    {id: 0, titulo: 'Discontinuo', estatus: true, padding: '0px 5px'},
-    {id: 1, titulo: 'No resurtible', estatus: false, padding: '0px 5px'},
-    {id: 2, titulo: 'Línea', estatus: false, padding: '0px 6px'},
-    {id: 3, titulo: 'Nuevos', estatus: false, padding: '0px 4px'},
+    {id: 0, titulo: 'Discontinuo', estatus: true, padding: '0px 7px'},
+    {id: 1, titulo: 'No resurtible', estatus: false, padding: '0px 7px'},
+    {id: 2, titulo: 'Línea', estatus: false, padding: '0px 7px'},
+    {id: 3, titulo: 'Nuevos', estatus: false, padding: '0px 7px'},
   ];
 
   botonesRotacion = [

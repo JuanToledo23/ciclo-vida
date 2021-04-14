@@ -13,7 +13,7 @@ import { InventarioService } from 'src/app/shared/services/inventarioService.ser
 export class DonacionComponent implements OnInit {
 
   constructor(public _HeaderFooterService: HeaderFooterService, public dialog: MatDialog, public _InventarioService: InventarioService, private router: Router) {
-    this._HeaderFooterService.construirHeader('', 'Devolución a proveedor', true, false, false);
+    this._HeaderFooterService.construirHeader('', 'Donación', true, false, false);
   }
 
   ngOnInit(): void {
