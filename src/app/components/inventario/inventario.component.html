@@ -1,12 +1,28 @@
 <div class="u-contenedor-fijo">
-    <div class="contenedor-filtros u-flex-between u-pad-1 u-border-bottom margin-top">
-        <div class="u-fz-17 u-txt-medium">Total de artículos: <strong>250</strong></div>
-        <div>
-            <mat-select class="u-txt-demibold" style="width: 133px;">
-                <mat-option value="opt1">Opción 1</mat-option>
-                <mat-option value="opt2">Opción 2</mat-option>
-                <mat-option value="opt3">Opción 3</mat-option>
-            </mat-select>
+    <div class="contenedor-filtros u-pad-1 u-border-bottom margin-top">
+        <div class="u-flex-between">
+            <div class="u-fz-17 u-txt-medium">Total de artículos: <strong>250</strong></div>
+            <div>
+                <mat-select class="u-txt-demibold" style="width: 133px;">
+                    <mat-option value="opt1">Opción 1</mat-option>
+                    <mat-option value="opt2">Opción 2</mat-option>
+                    <mat-option value="opt3">Opción 3</mat-option>
+                </mat-select>
+            </div>
+            
+        </div>
+        <div class="u-flex u-fz-12" style="margin-top: 10px;" *ngIf="_InventarioService.mostrarFiltros">
+            <div class="u-txt-medium">Resultado para:</div>
+            <div class="u-flex">
+                <div class="contenedor-filtro-aplicado" style="margin-left: 12px;">
+                    <label>No resurtible</label>
+                    <img src="assets/img/icons/filtro_exit.svg" class="salida-filtro">
+                </div>
+                <div class="contenedor-filtro-aplicado" style="margin-left: 12px;">
+                    <label>Con descuento</label>
+                    <img src="assets/img/icons/filtro_exit.svg" class="salida-filtro">
+                </div>
+            </div>
         </div>
     </div>
     <div class="contenedor-titulos u-flex-between u-border-bottom u-txt-demibold" style="padding: 2px 0px">

@@ -1,11 +1,11 @@
-<div class="home-container">
+<div class="home-container" *ngIf="!registerScreen">
     <div lottie [options]="optionsCaminar" (animationCreated)="animationCreated($event)" class="lottie-svg"></div>
-    <div class="u-flex-center logoEKT u-position-a u-txt-rojo" style="font-size: 35px; font-size: 35px;top: 44%;left: 18%;">
+    <div class="u-flex-center logoEKT u-position-a u-txt-rojo" style="font-size: 35px;left: 0;right: 0;top: 0;bottom: 0;">
         <span class="u-txt-medium" style="margin-top: 8px;margin-right: 9px;">EKT </span> | <strong style="margin-left: 8px;"> Inventario</strong>
     </div>
 </div>
 
-<!-- <div class="bloqueInicio" *ngIf="registerScreen">
+<div class="bloqueInicio" *ngIf="registerScreen">
     <div class="contenedor-login fade-in-image" >
         <div style="padding: 22px 31.98px;">
             <div class="u-flex-center u-fz-18">
@@ -15,22 +15,22 @@
                 Bienvenido
             </div>
             <div class="row">
-                <div class="col-12" style="margin-top: 29px;">
+                <div class="col-12" style="margin-top: 29px; height: 56px;">
                     <div class="u-fz-17 u-txt-medium" style="margin-bottom: 3px;">Número de empleado</div>
                     <div class="u-position-r">
-                        <input type="text" style="height: 40px !important;" [(ngModel)]="numEmpleado">
-                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!numEmpleado">Número de empleado incorrecto</div>
-                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="numEmpleado">
-                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!numEmpleado">
+                        <input type="text" style="height: 40px !important;" [(ngModel)]="numEmpleado" (keyup)="validarNumero()">
+                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!numeroEmpleadoValido">Número de empleado incorrecto</div>
+                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="numEmpleado && numeroEmpleadoValido">
+                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!numeroEmpleadoValido">
                     </div>
                 </div>
-                <div class="col-12" style="margin-top: 51px;">
+                <div class="col-12" style="margin-top: 51px; height: 56px;">
                     <div class="u-fz-17 u-txt-medium" style="margin-bottom: 3px;">Llave maestra</div>
                     <div class="u-position-r">
-                        <input type="text" style="height: 40px !important;" [(ngModel)]="llave">
-                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!llave">Llave maestra incorrecta</div>
-                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="llave">
-                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!llave">
+                        <input type="text" style="height: 40px !important;" [(ngModel)]="llave" (keyup)="validarLlave()">
+                        <div class="u-fz-12 u-txt-rojo u-txt-demibold" *ngIf="!llaveValida">Llave maestra incorrecta</div>
+                        <img src="assets/img/icons/check-circle.svg" class="u-position-a" style="top: 11px; right: 11px;" *ngIf="llave && llaveValida">
+                        <img src="assets/img/icons/error_validation.svg" class="u-position-a" style="top: 11px; right: 11px; width: 17px;" *ngIf="!llaveValida">
                     </div>
                 </div>
             </div>
@@ -60,4 +60,4 @@
             </div>
         </div>
     </app-animacion-registrar>
-</div> -->
+</div>

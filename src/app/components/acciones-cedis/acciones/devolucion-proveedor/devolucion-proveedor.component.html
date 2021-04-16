@@ -21,8 +21,9 @@
         </div>
         <div class="col-12" style="margin-top: 24.67px;">
             <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">Selecciona una fecha para recolección</div>
-            <div class="u-cursor-p" (click)="abrirDialog()">
+            <div class="u-cursor-p u-position-r" (click)="abrirDialog()">
                 <input type="text" class="u-input-read" [(ngModel)]="_InventarioService.fechaSeleccionada">
+                <img src="assets/img/icons/calendar.svg" class="u-position-a" style="width: 13px;top: 8px;right: 14px;">
             </div>
         </div>
     </div>

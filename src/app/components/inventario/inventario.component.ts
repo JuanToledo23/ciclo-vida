@@ -63,6 +63,7 @@ export class InventarioComponent implements OnInit {
       element.estatus = false;
     });
     boton.estatus = true;
+    this._InventarioService.mostrarFiltros = true;
   }
 
   seleccionRotacion(boton) {
@@ -70,6 +71,7 @@ export class InventarioComponent implements OnInit {
       element.estatus = false;
     });
     boton.estatus = true;
+    this._InventarioService.mostrarFiltros = true;
   }
 
   seleccionDescuento(boton) {
@@ -77,6 +79,7 @@ export class InventarioComponent implements OnInit {
       element.estatus = false;
     });
     boton.estatus = true;
+    this._InventarioService.mostrarFiltros = true;
   }
 
   seleccionEncabezado(encabezado) {
