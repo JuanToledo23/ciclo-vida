@@ -65,27 +65,6 @@ export class DatepickerDialog implements OnInit {
       }
     });
   }
-  
-
-/*   guardarDias() {
-    this.dias = this.getDates(new Date(this.calendarioService.inlineRange.begin), new Date(this.calendarioService.inlineRange.end))
-    this.calendarioService.fechas = this.dias;
-  } */
-
-/*   getDates(startDate, endDate) {
-    var dates = [],
-        currentDate = startDate,
-        addDays = function(days) {
-          var date = new Date(this.valueOf());
-          date.setDate(date.getDate() + days);
-          return date;
-        };
-    while (currentDate <= endDate) {
-      dates.push(currentDate);
-      currentDate = addDays.call(currentDate, 1);
-    }
-    return dates;
-  }; */
 
 }
 

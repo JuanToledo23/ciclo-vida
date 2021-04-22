@@ -57,5 +57,9 @@ export class InventarioService {
     getTiendas() {
         return this.tiendas;
     }
+
+    getFecha() {
+        return this.fechaSeleccionada;
+    }
 }
 

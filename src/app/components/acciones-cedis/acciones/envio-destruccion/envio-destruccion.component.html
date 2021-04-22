@@ -5,16 +5,16 @@
     <div class="row" style="margin-top: 16.87px;">
         <div class="col-12" style="margin-top: 24.67px;">
             <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">¿Número de piezas para destrucción?</div>
-            <input type="text">
+            <input type="text" [(ngModel)]="piezas" (click)="validar()">
         </div>
         <div class="col-12" style="margin-top: 24.67px;">
             <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">¿Cuántos m<sup>3</sup> son?</div>
-            <input type="text">
+            <input type="number" [(ngModel)]="metros" (click)="validar()">
         </div>
         <div class="col-12" style="margin-top: 24.67px;">
             <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">Selecciona una fecha para recolección</div>
             <div class="u-cursor-p u-position-r" (click)="abrirDialog()">
-                <input type="text" class="u-input-read" [(ngModel)]="_InventarioService.fechaSeleccionada">
+                <input type="text" class="u-input-read" [(ngModel)]="fecha">
                 <img src="assets/img/icons/calendar.svg" class="u-position-a" style="width: 13px;top: 8px;right: 14px;">
             </div>
         </div>
@@ -22,5 +22,5 @@
 </div>
 
 <div class="u-flex-center contenedor-boton u-w-100" style="height: 87px; bottom: 0;position: fixed;">
-    <button mat-flat-button color="primary" style="width: 120px; height: 40px;" class="btn" (click) = "continuar()">Continuar</button>
+    <button mat-flat-button color="primary" style="width: 120px; height: 40px;" class="btn" (click) = "continuar()" [ngClass]="{'desac-button': !continuarBtn}">Enviar solicitud</button>
 </div>

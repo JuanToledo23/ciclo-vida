@@ -62,15 +62,16 @@
                     Agregar
                 </div>
             </div>
-        </ng-container>
-        <div *ngIf="articulosLigar2.length >= 2 && opt3" class="row">
-            <div class="col-12" style="margin-top: 29px;">
+            <div class="col-12" style="margin-top: 29px;" *ngIf="articulosLigar2.length > 1">
                 <div class="u-fz-15 u-txt-demibold" style="margin-bottom: 9px;">¿En qué territorio lo quieres aplicar?</div>
                 <div class="u-cursor-p" (click)="seleccionarTerritorio2()">
                     <input type="text" class="u-input-read" [(ngModel)]="territoriosSeleccionados2">
                 </div>
             </div>
-        </div>
+        </ng-container>
+        <!-- <div class="row" *ngIf="opt3">
+            
+        </div> -->
     </div>
 </div>
 

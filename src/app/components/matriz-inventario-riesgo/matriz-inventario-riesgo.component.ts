@@ -71,7 +71,7 @@ export class MatrizInventarioRiesgoComponent implements OnInit {
 
 
   numeroAleatorio() {
-    return Math.floor(Math.random() * 300) + 25;
+    return Math.floor(Math.random() * 300) + 0;
   }
 
   sumatoria(array) {

@@ -14,7 +14,7 @@
         <div style="width: 13px;margin-left: 35px;" class="u-txt-link" (click)="abrirTiendas()">{{item.tiendas}}</div>
         <div style="width: 29.98px; margin-left: 41px;">{{item.costo}}</div>
         <div style="margin-left: 13px;">
-            <button mat-flat-button color="primary" class="btn" style="width: 69.33px;height: 23.33px;padding: unset;line-height: unset;">Acciones</button>
+            <button mat-flat-button color="primary" class="btn" style="width: 69.33px;height: 23.33px;padding: unset;line-height: unset;" [routerLink]="['/acciones-tienda']" routerLinkActive="router-link-active" >Acciones</button>
         </div>
     </div>
 </div>

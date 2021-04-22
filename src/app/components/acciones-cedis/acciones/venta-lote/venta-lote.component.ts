@@ -12,6 +12,12 @@ import { InventarioService } from 'src/app/shared/services/inventarioService.ser
 })
 export class VentaLoteComponent implements OnInit {
 
+  quien: string = '';
+  piezas: string = '';
+  metros: string = '';
+  fecha: string = '';
+  continuarBtn: boolean = false;
+
   constructor(public _HeaderFooterService: HeaderFooterService, public dialog: MatDialog, public _InventarioService: InventarioService, private router: Router) {
     this._HeaderFooterService.construirHeader('', 'Venta por lote', true, false, false);
   }
@@ -23,7 +29,13 @@ export class VentaLoteComponent implements OnInit {
     const dialogRef = this.dialog.open(DatepickerDialog, {
       disableClose: true,
     });
-
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.fecha = this._InventarioService.getFecha();
+      }
+      this.validar();
+    });
+    
   }
   continuar() {
         const dialogRef = this.dialog.open(FormularioDialog, {
@@ -38,6 +50,14 @@ export class VentaLoteComponent implements OnInit {
           }
         });
 
+  }
+
+  validar() {
+    if(this.quien === '' || this.piezas === '' || this.metros === '' || this.fecha === '') {
+      this.continuarBtn = false;
+    } else {
+      this.continuarBtn = true;
+    }
   }
 
 }

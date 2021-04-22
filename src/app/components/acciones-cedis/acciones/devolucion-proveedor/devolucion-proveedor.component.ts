@@ -11,6 +11,13 @@ import { FormularioDialog } from 'src/app/shared/dialogs/formulario/formulario.d
   templateUrl: './devolucion-proveedor.component.html'
 })
 export class DevolucionProveedorComponent implements OnInit {
+
+  proveedor: string = '';
+  piezas: string = '';
+  metros: string = '';
+  fecha: string = '';
+  continuarBtn: boolean = false;
+
   
   constructor(public _HeaderFooterService: HeaderFooterService, public dialog: MatDialog, public _InventarioService: InventarioService, private router: Router) {
     this._HeaderFooterService.construirHeader('', 'Devolución a proveedor', true, false, false);
@@ -23,21 +30,34 @@ export class DevolucionProveedorComponent implements OnInit {
     const dialogRef = this.dialog.open(DatepickerDialog, {
       disableClose: true,
     });
-
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.fecha = this._InventarioService.getFecha();
+      }
+      this.validar();
+    });
+    
   }
   continuar() {
-        const dialogRef = this.dialog.open(FormularioDialog, {
-          disableClose: true,
-          data: {
-              tipo: 2,
-          },
-        });
-        dialogRef.afterClosed().subscribe(result => {
-          if(result) {
-            this.router.navigate(['/acciones-cedis']);
-          }
-        });
+    const dialogRef = this.dialog.open(FormularioDialog, {
+      disableClose: true,
+      data: {
+          tipo: 2,
+      },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.router.navigate(['/acciones-cedis']);
+      }
+    });
+  }
 
+  validar() {
+    if(this.proveedor === '' || this.piezas === '' || this.metros === '' || this.fecha === '') {
+      this.continuarBtn = false;
+    } else {
+      this.continuarBtn = true;
+    }
   }
 
 }

@@ -172,7 +172,7 @@ newChartOption: any = {};
       ],
       grid: {
         left: 25,
-        top: 40,
+        top: 50,
         right: 46,
         bottom: 40
       },
@@ -448,7 +448,7 @@ newChartOption: any = {};
       this.newChartOption = this.getInfo();
     } else if (tipo === 'monto') {
       this.botonesGrafica = true;
-      this.generarDatos(22000000);
+      this.generarDatos(999999);
       this.newChartOption = this.getInfo();
     }
   }
