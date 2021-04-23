@@ -448,7 +448,7 @@ newChartOption: any = {};
       this.newChartOption = this.getInfo();
     } else if (tipo === 'monto') {
       this.botonesGrafica = true;
-      this.generarDatos(999999);
+      this.generarDatos(2000000);
       this.newChartOption = this.getInfo();
     }
   }
