@@ -30,7 +30,7 @@
         <div style="padding-right: 42px;">Piezas</div>
     </div>
 </div>
-<div class="u-scroll-y margin-bottom" style="margin-top: 145px;">
+<div class="u-scroll-y margin-bottom" style="margin-top: 145px;" [ngClass]="{'u-t-170': _InventarioService.mostrarFiltros}">
     <div class="u-flex-between u-pad-1 u-border-bottom" *ngFor="let producto of inventario" [routerLink]="['/detalle', producto.id]" routerLinkActive="router-link-active" >
         <div class="u-flex u-position-r">
             <div class="u-circulo u-flex-center" style="overflow: hidden;" [ngClass]="{'borde-rojo': producto.descuento}">
